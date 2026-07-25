@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Reduz o Header ao Rolar a Página (Scroll Effect)
+  // 1. Efeito de Encolhimento do Header ao Rolar a Página
   const header = document.getElementById("main-header");
   if (header) {
     window.addEventListener("scroll", () => {
@@ -11,22 +11,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Submenu de Serviços (Clique / Toggle de Classe .active)
+  // 2. Abertura e Fechamento Exclusivo por CLIQUE do Submenu de Serviços
   const dropdownParent = document.querySelector(".dropdown");
   const dropdownToggle = document.getElementById("servicesToggle");
 
   if (dropdownToggle && dropdownParent) {
     dropdownToggle.addEventListener("click", (event) => {
-      event.preventDefault(); // Impede o salto de página do link #
+      event.preventDefault(); // Impede o salto de página da tag #
+      event.stopPropagation(); // Impede o evento de propagar para o document
       
-      // Alterna a classe .active no container pai
+      // Alterna a classe .active no item pai .dropdown
       const isOpen = dropdownParent.classList.toggle("active");
       
       // Atualiza atributo de acessibilidade
       dropdownToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Fecha o submenu automaticamente ao clicar fora
+    // Fecha a caixa suspensa ao clicar em qualquer outro ponto fora dela
     document.addEventListener("click", (event) => {
       if (!dropdownParent.contains(event.target)) {
         dropdownParent.classList.remove("active");
