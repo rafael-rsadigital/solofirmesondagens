@@ -8,23 +8,20 @@
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.solofirmesondagens.com.br/">
 
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.solofirmesondagens.com.br/">
   <meta property="og:title" content="Solofirme Sondagens e Fundações | Engenharia Geotécnica">
   <meta property="og:description" content="Especialistas em sondagem de solo (SPT, Trado e Rotativa) para galpões, muros e edificações no litoral de SP e Vale do Paraíba.">
-  <meta property="og:image" content="https://www.solofirmesondagens.com.br/assets/og-solofirme.jpg">
-
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Solofirme Sondagens e Fundações">
-  <meta name="twitter:description" content="Ensaios geotécnicos e perfuração de solo na Baixada Santista e Vale do Paraíba.">
+  <meta property="og:image" content="https://www.solofirmesondagens.com.br/assets/images/og-solofirme.jpg">
 
   <meta name="geo.region" content="BR-SP">
   <meta name="geo.placename" content="Mongaguá">
   <meta name="geo.position" content="-24.0886;-46.6201">
   <meta name="ICBM" content="-24.0886, -46.6201">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <script type="application/ld+json">
   {
@@ -34,7 +31,7 @@
         "@type": "LocalBusiness",
         "@id": "https://www.solofirmesondagens.com.br/#organization",
         "name": "Solofirme Sondagens e Fundações",
-        "image": "https://www.solofirmesondagens.com.br/assets/logo.png",
+        "image": "https://www.solofirmesondagens.com.br/assets/images/logo.png",
         "url": "https://www.solofirmesondagens.com.br/",
         "telephone": "+55-13-99999-9999",
         "priceRange": "$$",
@@ -53,28 +50,13 @@
           "longitude": -46.6201
         },
         "areaServed": [
-          {
-            "@type": "AdministrativeArea",
-            "name": "Baixada Santista"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Litoral Norte de São Paulo"
-          },
-          {
-            "@type": "AdministrativeArea",
-            "name": "Vale do Paraíba"
-          }
+          { "@type": "AdministrativeArea", "name": "Baixada Santista" },
+          { "@type": "AdministrativeArea", "name": "Litoral Norte de São Paulo" },
+          { "@type": "AdministrativeArea", "name": "Vale do Paraíba" }
         ],
         "openingHoursSpecification": {
           "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday"
-          ],
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
           "opens": "07:00",
           "closes": "18:00"
         }
@@ -83,9 +65,7 @@
         "@type": "Service",
         "@id": "https://www.solofirmesondagens.com.br/#service-spt",
         "name": "Sondagem a Percussão (SPT)",
-        "provider": {
-          "@id": "https://www.solofirmesondagens.com.br/#organization"
-        },
+        "provider": { "@id": "https://www.solofirmesondagens.com.br/#organization" },
         "serviceType": "Investigação Geotécnica",
         "description": "Ensaio de penetração padrão para determinação do perfil geológico e capacidade de carga do solo."
       },
@@ -118,15 +98,15 @@
             "name": "Quais regiões a Solofirme atende?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Atendemos toda a Baixada Santista (Mongaguá, Santos, Praia Grande, etc.), o Litoral Norte de SP (Ubatuba, São Sebastião, Caraguatatuba) e o Vale do Paraíba (São José dos Campos, Taubaté e cidades vizinhas)."
+              "text": "Atendemos toda a Baixada Santista (Mongaguá, Santos, Praia Grande, etc.), o Litoral Norte de SP (Ubatuba, São Sebastião, Caraguatatuba) e o Vale do Paraíba (São José dos Campos, Taubaté e região)."
             }
           },
           {
             "@type": "Question",
-            "name": "Por que a sondagem de solo é obrigatória na construção civil?",
+            "name": "Por que realizar a sondagem antes de construir?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "A sondagem evita a ocorrência de trincas, recalques e colapsos estruturais, além de prevenir o superdimensionamento de fundações, gerando economia real no custo da obra."
+              "text": "Uma sondagem bem executada evita superdimensionamento de fundações (economizando material) e previne trincas, recalques e colapsos estruturais no futuro."
             }
           }
         ]
@@ -138,75 +118,132 @@
 <body>
 
   <header>
-    <nav aria-label="Navegação Principal">
-      <a href="/">
-        <img src="/assets/logo.png" alt="Solofirme Sondagens e Fundações" width="200" height="60">
+    <div class="container header-wrapper">
+      <a href="/" class="logo">
+        <img src="/assets/images/logo.webp" alt="Solofirme Sondagens e Fundações" width="200" height="60" loading="eager">
       </a>
-      <ul>
-        <li><a href="/">Início</a></li>
-        <li><a href="/servicos/sondagem-spt">Sondagem SPT</a></li>
-        <li><a href="/servicos/sondagem-trado">Sondagem Trado</a></li>
-        <li><a href="/servicos/sondagem-rotativa">Sondagem Rotativa</a></li>
-        <li><a href="/atendimento/baixada-santista">Baixada Santista</a></li>
-        <li><a href="/contato">Contato</a></li>
-      </ul>
-    </nav>
+      <nav aria-label="Navegação Principal">
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/servicos/sondagem-spt">Sondagem SPT</a></li>
+          <li><a href="/servicos/sondagem-trado">Trado</a></li>
+          <li><a href="/servicos/sondagem-rotativa">Rotativa</a></li>
+          <li><a href="/atendimento/baixada-santista">Atendimento</a></li>
+          <li><a href="/contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
-    <section id="hero">
-      <h1>Solofirme Sondagens e Fundações em SP</h1>
-      <p>Engenharia geotécnica e investigação de solo na Baixada Santista, Litoral Norte e Vale do Paraíba.</p>
-      <a href="https://wa.me/5513999999999" target="_blank" rel="noopener">Solicitar Orçamento Técnico</a>
+    <section class="hero">
+      <div class="container">
+        <h1>Sondagem de Solo e Geotecnia em SP</h1>
+        <p>Precisão e segurança geotécnica para obras na Baixada Santista, Litoral Norte e Vale do Paraíba. Ensaios SPT, Trado e Rotativa.</p>
+        <a href="https://wa.me/5513999999999" target="_blank" rel="noopener" class="btn-cta">Solicitar Orçamento via WhatsApp</a>
+      </div>
     </section>
 
-    <section id="servicos">
-      <h2>Serviços Especializados em Sondagem de Solo</h2>
-      <article>
-        <h3>Sondagem a Percussão (SPT)</h3>
-        <p>Determinação precisa da capacidade de carga e perfil do solo para edifícios e galpões.</p>
-        <a href="/servicos/sondagem-spt">Saiba mais sobre Sondagem SPT</a>
-      </article>
-      <article>
-        <h3>Sondagem a Trado</h3>
-        <p>Investigação preliminar e mapeamento do lençol freático em camadas superficiais.</p>
-        <a href="/servicos/sondagem-trado">Saiba mais sobre Sondagem a Trado</a>
-      </article>
-      <article>
-        <h3>Sondagem Rotativa</h3>
-        <p>Perfuração em rochas e solos de alta dureza para fundações profundas e grandes obras.</p>
-        <a href="/servicos/sondagem-rotativa">Saiba mais sobre Sondagem Rotativa</a>
-      </article>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Nossas Soluções Geotécnicas</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Sondagem a Percussão (SPT)</h3>
+            <p>Determinação do perfil geológico, resistência N-SPT e nível do lençol freático para edificações e galpões.</p>
+            <a href="/servicos/sondagem-spt" class="card-link">Saiba mais sobre SPT &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Sondagem a Trado</h3>
+            <p>Investigação preliminar e amostragem de solo de camadas superficiais com rápido deslocamento.</p>
+            <a href="/servicos/sondagem-trado" class="card-link">Saiba mais sobre Trado &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Sondagem Rotativa</h3>
+            <p>Perfuração de alta precisão para rochas, matacões e solos duros/alterados para grandes cargas.</p>
+            <a href="/servicos/sondagem-rotativa" class="card-link">Saiba mais sobre Rotativa &rarr;</a>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="perguntas-frequentes">
-      <h2>Perguntas Frequentes sobre Sondagem e Geotecnia</h2>
-      <details>
-        <summary>O que é a Sondagem a Percussão (SPT)?</summary>
-        <p>A sondagem SPT é um ensaio de investigação do subsolo utilizado para determinar o perfil geológico, a resistência do solo (índice N-SPT) e a posição do nível do lençol freático, essencial para dimensionar fundações com segurança.</p>
-      </details>
-      <details>
-        <summary>Quais regiões a Solofirme atende?</summary>
-        <p>Atendemos toda a Baixada Santista (Mongaguá, Santos, Praia Grande, etc.), o Litoral Norte de SP (Ubatuba, São Sebastião, Caraguatatuba) e o Vale do Paraíba (São José dos Campos, Taubaté e cidades vizinhas).</p>
-      </details>
-      <details>
-        <summary>Por que a sondagem de solo é obrigatória na construção civil?</summary>
-        <p>A sondagem evita a ocorrência de trincas, recalques e colapsos estruturais, além de prevenir o superdimensionamento de fundações, gerando economia real no custo da obra.</p>
-      </details>
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Investigação para Todo Tipo de Projeto</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Muros de Arrimo e Contenções</h3>
+            <p>Diagnóstico preciso do solo para dimensionar estruturas de contenção e evitar deslizamentos em encostas.</p>
+            <a href="/aplicacoes/muros-de-arrimo-e-contencoes" class="card-link">Detalhes do serviço &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Galpões Industriais e Comerciais</h3>
+            <p>Estudos geotécnicos focados em grandes áreas para otimização de pisos e definição de fundações profundas.</p>
+            <a href="/aplicacoes/galpoes-e-obras-industriais" class="card-link">Detalhes do serviço &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Residências e Edifícios</h3>
+            <p>Ensaios completos para dar estabilidade e garantir o correto dimensionamento das sapatas ou estacas.</p>
+            <a href="/contato" class="card-link">Fazer cotação &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Por que Escolher a Solofirme?</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto; color: var(--color-text-muted);">
+          Uma sondagem bem executada evita o superdimensionamento de fundações — economizando materiais e recursos — e previne o surgimento de trincas, recalques ou falhas estruturais no futuro.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Perguntas Frequentes</h2>
+        <div class="faq-container">
+          <details>
+            <summary>O que é a Sondagem a Percussão (SPT)?</summary>
+            <p>A sondagem SPT é um ensaio de investigação do subsolo utilizado para determinar o perfil geológico, a resistência do solo (índice N-SPT) e a posição do nível do lençol freático, essencial para dimensionar fundações com segurança.</p>
+          </details>
+          <details>
+            <summary>Quais regiões a Solofirme atende?</summary>
+            <p>Atendemos toda a Baixada Santista (Mongaguá, Santos, Praia Grande, etc.), o Litoral Norte de SP (Ubatuba, São Sebastião, Caraguatatuba) e o Vale do Paraíba (São José dos Campos, Taubaté e região).</p>
+          </details>
+          <details>
+            <summary>Por que realizar a sondagem antes de construir?</summary>
+            <p>Uma sondagem bem executada evita superdimensionamento de fundações (economizando material) e previne trincas, recalques e colapsos estruturais no futuro.</p>
+          </details>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <section>
-      <h3>Solofirme Sondagens e Fundações</h3>
-      <address>
-        R. Octávio Alves Rodrigues, 05 - Balneario Verde Mar<br>
-        Mongaguá - SP, 11730-000<br>
-        Atendimento: Baixada Santista, Litoral Norte e Vale do Paraíba
-      </address>
-    </section>
-    <p>&copy; 2026 Solofirme Sondagens e Fundações. Todos os direitos reservados.</p>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Solofirme Sondagens</h3>
+        <p>Engenharia geotécnica e investigação de solos para construção civil e obras de infraestrutura.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Endereço Sede</h4>
+        <address>
+          R. Octávio Alves Rodrigues, 05<br>
+          Balneario Verde Mar, Mongaguá - SP<br>
+          CEP 11730-000
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Regiões Atendidas</h4>
+        <p>• Baixada Santista<br>• Litoral Norte de SP<br>• Vale do Paraíba</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Solofirme Sondagens e Fundações. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
+  <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
