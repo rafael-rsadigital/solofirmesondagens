@@ -1,21 +1,372 @@
-<nav aria-label="Navegação Principal" class="nav-menu">
-  <ul>
-    <li><a href="/">Início</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    
-    <li class="dropdown">
-      <a href="#" class="dropdown-toggle" id="servicesToggle" aria-expanded="false">
-        Serviços <span class="arrow">▼</span>
-      </a>
-      <ul class="dropdown-menu" id="servicesMenu">
-        <li><a href="servicos/sondagem-spt">Sondagem SPT</a></li>
-        <li><a href="servicos/sondagem-trado">Sondagem a Trado</a></li>
-        <li><a href="servicos/sondagem-rotativa">Sondagem Rotativa</a></li>
-      </ul>
-    </li>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solofirme Sondagens e Fundações | SPT, Geotecnia e Investigação de Solo</title>
+  <meta name="description" content="Sondagem de solo SPT, Trado e Rotativa na Baixada Santista, Litoral Norte e Vale do Paraíba. Laudos técnicos ABNT NBR 6484 e acompanhamento CREA-SP.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.solofirmesondagens.com.br/">
 
-    <li><a href="blog">Blog</a></li>
-    <li><a href="contato">Contato</a></li>
-    <li><a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-header">Solicitar Orçamento</a></li>
-  </ul>
-</nav>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Solofirme Sondagens e Fundações">
+  <meta property="og:url" content="https://www.solofirmesondagens.com.br/">
+  <meta property="og:title" content="Solofirme Sondagens e Fundações | SPT, Geotecnia e Investigação de Solo">
+  <meta property="og:description" content="Sondagens SPT, Trado e Rotativa com precisão geotécnica para obras residenciais, galpões e contenções no litoral de SP e Vale do Paraíba.">
+  <meta property="og:image" content="https://www.solofirmesondagens.com.br/assets/images/og-solofirme.jpg">
+
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Mongaguá">
+  <meta name="geo.position" content="-24.0886;-46.6201">
+  <meta name="ICBM" content="-24.0886, -46.6201">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["EngineeringService", "ProfessionalService"],
+        "@id": "https://www.solofirmesondagens.com.br/#organization",
+        "name": "Solofirme Sondagens e Fundações",
+        "image": "https://www.solofirmesondagens.com.br/images/logo/logo.png",
+        "url": "https://www.solofirmesondagens.com.br/",
+        "telephone": "+55-13-98811-1316",
+        "email": "contato@solofirmesondagens.com.br",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "R. Octávio Alves Rodrigues, 05",
+          "addressLocality": "Mongaguá",
+          "addressRegion": "SP",
+          "postalCode": "11730-000",
+          "addressCountry": "BR",
+          "neighborhood": "Balneario Verde Mar"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -24.0886,
+          "longitude": -46.6201
+        },
+        "areaServed": [
+          { "@type": "AdministrativeArea", "name": "Baixada Santista" },
+          { "@type": "AdministrativeArea", "name": "Litoral Norte de São Paulo" },
+          { "@type": "AdministrativeArea", "name": "Vale do Paraíba" }
+        ],
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "07:00",
+          "closes": "18:00"
+        }
+      },
+      {
+        "@type": "Service",
+        "@id": "https://www.solofirmesondagens.com.br/#service-spt",
+        "name": "Sondagem a Percussão (SPT)",
+        "provider": { "@id": "https://www.solofirmesondagens.com.br/#organization" },
+        "serviceType": "Investigação Geotécnica NBR 6484",
+        "description": "Ensaio de penetração padrão para determinação do perfil geológico, resistência N-SPT e nível do lençol freático."
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.solofirmesondagens.com.br/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.solofirmesondagens.com.br/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.solofirmesondagens.com.br/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Como a sondagem de solo auxilia no projeto de fundação?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A sondagem permite identificar as características do solo, camadas geológicas e nível d'água, auxiliando o dimensionamento adequado das fundações e reduzindo riscos e custos desnecessários durante a execução da obra."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quantos furos de sondagem são necessários para o meu terreno?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A quantidade de furos segue rigorosamente a norma NBR 8036 da ABNT. A norma estabelece um mínimo de 2 furos para áreas de projeção em planta de até 200m², 3 furos para áreas entre 200m² e 400m², aumentando proporcionalmente conforme o porte do projeto."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O laudo técnico atende às exigências da ABNT e conta com ART?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. As investigações seguem as normas NBR 6484 e NBR 8036, sendo executadas com acompanhamento técnico e emissão da documentação necessária conforme as exigências do CREA-SP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Qual a diferença entre Sondagem SPT, Trado e Rotativa?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A SPT mede a resistência do solo por penetração e identifica o lençol freático. O Trado é indicado para investigações preliminares e amostragem superficial. A Rotativa é utilizada para perfuração em rochas e solos de alta dureza."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Como é identificada a presença de água/lençol freático no terreno?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Durante o ensaio SPT, o nível d'água é monitorado a cada metro de perfuração e medido novamente 24 horas após o término da perfuração para determinar a estabilização precisa do lençol freático."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "A Solofirme atende a Baixada Santista, Litoral Norte e Vale do Paraíba?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Nossa sede operacional em Mongaguá nos garante excelente logística para atender toda a Baixada Santista, Litoral Norte e as cidades do Vale do Paraíba."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <header id="main-header">
+    <div class="container header-wrapper">
+      <a href="/" class="logo">
+        <img src="images/logo/logo.png" alt="Solofirme Sondagens e Fundações" width="180" height="52" loading="eager">
+      </a>
+      
+      <nav aria-label="Navegação Principal" class="nav-menu">
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" id="servicesToggle" aria-expanded="false">
+              Serviços <span class="arrow">▼</span>
+            </a>
+            <ul class="dropdown-menu" id="servicesMenu">
+              <li><a href="servicos/sondagem-spt">Sondagem SPT</a></li>
+              <li><a href="servicos/sondagem-trado">Sondagem a Trado</a></li>
+              <li><a href="servicos/sondagem-rotativa">Sondagem Rotativa</a></li>
+            </ul>
+          </li>
+
+          <li><a href="blog">Blog</a></li>
+          <li><a href="contato">Contato</a></li>
+          <li><a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-header">Solicitar Orçamento</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Sondagem de Solo SPT com Laudo Técnico em São Paulo</h1>
+          <p>Investigação geotécnica precisa para obras residenciais, industriais e contenções na Baixada Santista, Litoral Norte e Vale do Paraíba.</p>
+          <a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-cta">Solicitar Avaliação Técnica no WhatsApp</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/campo/spt-campo.webp" alt="Equipe da Solofirme realizando ensaio de sondagem SPT em obra" width="550" height="380" loading="eager">
+          <span class="image-caption">Sondagem de solo realizada por equipe técnica especializada em campo.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Segurança Geotécnica e Comprometimento Técnico</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Acompanhamento CREA-SP</h3>
+            <p>Serviços realizados com acompanhamento técnico e emissão da documentação necessária conforme as exigências profissionais aplicáveis.</p>
+          </article>
+          <article class="card">
+            <h3>Equipamentos Adequados</h3>
+            <p>Frota e equipamentos preparados para diferentes métodos de investigação, garantindo eficiência na execução e qualidade das informações.</p>
+          </article>
+          <article class="card">
+            <h3>Dimensionamento Seguro</h3>
+            <p>Fornecemos dados confiáveis sobre a resistência do solo e camadas geológicas para auxiliar o dimensionamento adequado das fundações.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section section-bg">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <h2>Sobre a Solofirme</h2>
+            <p>A <strong>Solofirme Sondagens e Fundações</strong> nasceu com o propósito de oferecer soluções em investigação geotécnica com precisão técnica, agilidade operacional e compromisso com a segurança das obras.</p>
+            <p>Por meio da sondagem de solo, fornecemos informações fundamentais para que engenheiros, arquitetos, construtoras e profissionais da construção civil possam tomar decisões mais seguras no desenvolvimento de projetos de fundações e estruturas.</p>
+            <p>Atuamos com Sondagem SPT, Sondagem a Trado e Sondagem Rotativa, seguindo as normas técnicas aplicáveis e utilizando equipamentos adequados para diferentes tipos de terrenos e necessidades construtivas.</p>
+            
+            <div class="about-mission-vision">
+              <div class="mv-item">
+                <h4>Nossa Missão</h4>
+                <p>Oferecer informações geotécnicas precisas para garantir mais segurança, economia e eficiência no desenvolvimento de projetos de engenharia.</p>
+              </div>
+              <div class="mv-item">
+                <h4>Nossa Visão</h4>
+                <p>Ser reconhecida como referência em investigação geotécnica na Baixada Santista, Litoral Norte e Vale do Paraíba, destacando-se pela qualidade técnica e confiabilidade dos resultados.</p>
+              </div>
+            </div>
+          </div>
+          <div class="about-tech">
+            <h3>Corpo Técnico Especializado</h3>
+            <p>A Solofirme conta com profissionais capacitados para realizar investigações geotécnicas em diferentes tipos de terrenos e necessidades de obra.</p>
+            <p>Nossa equipe atua em sondagens para edificações residenciais, comerciais e industriais, além de estudos envolvendo terrenos de maior complexidade, como áreas industriais, contenções e locais com características geológicas específicas.</p>
+            <p>O compromisso da empresa é unir experiência de campo, conhecimento técnico e procedimentos adequados para entregar relatórios confiáveis aos responsáveis pelos projetos.</p>
+          </div>
+        </div>
+        
+        <div class="cta-banner">
+          <h3>Conheça nosso atendimento para a sua região</h3>
+          <a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-cta">Falar com nossa Equipe Técnica</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos" class="section">
+      <div class="container">
+        <h2 class="section-title">Métodos de Sondagem e Perfuração</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Sondagem a Percussão (SPT)</h3>
+            <p>O ensaio consagrado do mercado. Determina o perfil geológico, o índice N-SPT e a profundidade do lençol freático.</p>
+            <a href="servicos/sondagem-spt" class="card-link">Ver detalhes do SPT &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Sondagem a Trado</h3>
+            <p>Indicada para investigações preliminares de camadas superficiais, amostragem e medição rápida de nível d'água.</p>
+            <a href="servicos/sondagem-trado" class="card-link">Ver detalhes do Trado &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Sondagem Rotativa</h3>
+            <p>Perfuração de alta precisão para rochas, matacões e solos duros, garantindo amostragem contínua por testemunhos.</p>
+            <a href="servicos/sondagem-rotativa" class="card-link">Ver detalhes da Rotativa &rarr;</a>
+          </article>
+        </div>
+
+        <div class="cta-box-inline">
+          <p><strong>Precisa saber qual tipo de sondagem sua obra necessita?</strong></p>
+          <a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-cta btn-sm">Solicitar Avaliação Técnica</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Soluções para o seu Tipo de Projeto</h2>
+        <div class="grid-3">
+          <article class="card">
+            <h3>Muros de Arrimo e Contenções</h3>
+            <p>Análise do solo para dimensionamento de contenções e solo grampeado com maior segurança estrutural.</p>
+            <a href="aplicacoes/muros-de-arrimo-e-contencoes" class="card-link">Sondagem para Muros &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Galpões Industriais e Comerciais</h3>
+            <p>Estudos focados na capacidade de carga para placas de piso industrial e fundações de grande porte.</p>
+            <a href="aplicacoes/galpoes-e-obras-industriais" class="card-link">Sondagem para Galpões &rarr;</a>
+          </article>
+          <article class="card">
+            <h3>Residências e Edificações</h3>
+            <p>Garantia de estabilidade estrutural e tranquilidade técnica para o proprietário e o projetista.</p>
+            <a href="contato" class="card-link">Solicitar Cotação &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Atendimento Regional Ágil</h2>
+        <p style="text-align: center; max-width: 850px; margin: 0 auto; color: var(--color-text-muted);">
+          Localizada na <strong>R. Octávio Alves Rodrigues, 05 - Balneário Verde Mar (Mongaguá/SP)</strong>, a Solofirme opera com logística eficiente para atendimento na <strong>Baixada Santista, Litoral Norte e Vale do Paraíba</strong>.
+        </p>
+      </div>
+    </section>
+
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Perguntas Frequentes sobre Sondagem e Geotecnia</h2>
+        <div class="faq-container">
+          <details>
+            <summary>Como a sondagem de solo auxilia no projeto de fundação?</summary>
+            <p>A sondagem permite identificar as características do solo, camadas geológicas e nível d'água, auxiliando o dimensionamento adequado das fundações e reduzindo riscos e custos desnecessários durante a execução da obra.</p>
+          </details>
+          <details>
+            <summary>Quantos furos de sondagem são necessários para o meu terreno?</summary>
+            <p>A quantidade de furos segue rigorosamente a norma NBR 8036 da ABNT. A norma estabelece um mínimo de 2 furos para áreas de projeção em planta de até 200m², 3 furos para áreas entre 200m² e 400m², aumentando proporcionalmente conforme o porte do projeto.</p>
+          </details>
+          <details>
+            <summary>O laudo técnico atende às exigências da ABNT e conta com ART?</summary>
+            <p>Sim. As investigações seguem as normas NBR 6484 e NBR 8036, sendo executadas com acompanhamento técnico e emissão da documentação necessária conforme as exigências do CREA-SP.</p>
+          </details>
+          <details>
+            <summary>Qual a diferença entre Sondagem SPT, Trado e Rotativa?</summary>
+            <p>A SPT mede a resistência do solo por penetração e identifica o lençol freático. O Trado é indicado para investigações preliminares e amostragem superficial. A Rotativa é utilizada para perfuração em rochas e solos de alta dureza.</p>
+          </details>
+          <details>
+            <summary>Como é identificada a presença de água/lençol freático no terreno?</summary>
+            <p>Durante o ensaio SPT, o nível d'água é monitorado a cada metro de perfuração e medido novamente 24 horas após o término da perfuração para determinar a estabilização precisa do lençol freático.</p>
+          </details>
+          <details>
+            <summary>A Solofirme atende a Baixada Santista, Litoral Norte e Vale do Paraíba?</summary>
+            <p>Sim. Nossa sede operacional em Mongaguá nos garante excelente logística para atender toda a Baixada Santista, Litoral Norte e as cidades do Vale do Paraíba.</p>
+          </details>
+        </div>
+
+        <div class="cta-banner" style="margin-top: 2.5rem;">
+          <h3>Dúvidas sobre o seu terreno ou projeto?</h3>
+          <a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-cta">Falar no WhatsApp</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Solofirme Sondagens</h3>
+        <p>Engenharia geotécnica e investigação de solos com precisão e segurança para a construção civil.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sede Operacional</h4>
+        <address>
+          R. Octávio Alves Rodrigues, 05<br>
+          Balneario Verde Mar, Mongaguá - SP<br>
+          CEP 11730-000
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Contato Direto</h4>
+        <p>WhatsApp: (13) 98811-1316<br>
+        E-mail: contato@solofirmesondagens.com.br</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Solofirme Sondagens e Fundações. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
