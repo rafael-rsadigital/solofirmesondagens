@@ -1,0 +1,1093 @@
+/* ==========================================================================
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (SISTEMA DE DESIGN)
+   ========================================================================== */
+
+/* 1. Importação da Fonte Corporativa */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* 2. Variáveis de Design */
+:root {
+  --color-primary: #0f2a4a;        /* Azul Marinho Fechado */
+  --color-primary-dark: #081424;   /* Tom Escuro para Rodapé */
+  --color-accent: #c96010;         /* Terracota / Laranja Engenharia */
+  --color-accent-hover: #a34b09;    /* Hover do Terracota */
+  --color-text-main: #111827;      /* Grafite para leitura */
+  --color-text-muted: #4b5563;     /* Texto secundário */
+  --color-bg-light: #f8fafc;      /* Cinza leve para seções alternadas */
+  --color-white: #ffffff;
+  --color-border: #e2e8f0;         /* Bordas discretas */
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
+  --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
+  --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  --transition-fast: all 0.2s ease;
+}
+
+/* 3. Reset Global & Trava Anti-Rolagem Lateral */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, span {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* 4. Layout Base & Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* 5. Header Dinâmico & Sticky */
+header {
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition-fast);
+  width: 100%;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.85rem 0;
+  transition: var(--transition-fast);
+}
+
+.logo img {
+  max-width: 180px;
+  height: auto;
+  transition: var(--transition-fast);
+}
+
+header.scrolled .header-wrapper {
+  padding: 0.4rem 0;
+}
+
+header.scrolled .logo img {
+  max-width: 130px;
+}
+
+/* 6. Navegação Principal Centralizada */
+.nav-menu {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+}
+
+.nav-menu li {
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color-text-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: var(--transition-fast);
+}
+
+.nav-menu a:hover {
+  color: var(--color-accent);
+}
+
+/* 7. Hero / Dobra Principal (Home Page com Background) */
+.hero {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+  padding: 5rem 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  width: 100%;
+}
+
+.image-caption {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* 8. Cabeçalho das Páginas Internas (Subpáginas com Background) */
+.page-hero {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+  padding: 4rem 0 3.5rem 0;
+  text-align: center;
+}
+
+.page-hero-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-white);
+  margin-bottom: 0.75rem;
+}
+
+.page-hero-subtitle {
+  color: #cbd5e1;
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 9. Botões CTA */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-btn);
+  transition: var(--transition-fast);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.btn-cta:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+.btn-full {
+  width: 100%;
+}
+
+/* 10. Seções & Grids Gerais */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-bg {
+  background-color: var(--color-bg-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+}
+
+.section-title-left {
+  text-align: left;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* 11. Estruturas Específicas da Página "Sobre" */
+.about-main-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-paragraph {
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.about-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.about-media-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.about-media-box img {
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  width: 100%;
+}
+
+.about-sidebar-card {
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+}
+
+.about-sidebar-title {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.about-check-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  color: var(--color-text-main);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.about-check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-icon {
+  color: var(--color-accent);
+  font-weight: bold;
+}
+
+.directives-grid {
+  max-width: 950px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.directive-card {
+  background-color: var(--color-white);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.directive-title {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.directive-text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.about-container-narrow {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* 12. Estruturas Específicas da Página "Contato" */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-info-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact-info-icon {
+  background-color: rgba(201, 96, 16, 0.1);
+  color: var(--color-accent);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-content h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.contact-info-content p, .contact-info-content address {
+  font-style: normal;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-info-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info-content a:hover {
+  text-decoration: underline;
+}
+
+.contact-form-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.925rem;
+  margin-bottom: 1.75rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(201, 96, 16, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* 13. Estruturas Específicas do Blog */
+.blog-intro-text {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.blog-featured-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  margin-bottom: 4rem;
+  transition: var(--transition-fast);
+}
+
+.blog-featured-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.blog-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-featured-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-meta-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.blog-badge-tag {
+  background-color: rgba(201, 96, 16, 0.12);
+  color: var(--color-accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.blog-meta-details {
+  font-size: 0.825rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.blog-featured-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.blog-featured-excerpt {
+  color: var(--color-text-muted);
+  font-size: 0.975rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.blog-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-sidebar-widget {
+  background-color: var(--color-white);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}
+
+.blog-sidebar-title {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.blog-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.blog-category-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: var(--transition-fast);
+}
+
+.blog-category-item a:hover {
+  color: var(--color-accent);
+}
+
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.blog-badge-soon {
+  display: inline-block;
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 0.2rem 0.5rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.blog-link-disabled {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   14. ESTRUTURAS DO HUB DE SERVIÇOS (TABELA COMPARATIVA & PROCESSO)
+   ========================================================================== */
+
+/* Tabela Comparativa de Métodos */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  margin-top: 1.5rem;
+  background-color: var(--color-white);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 1.15rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.comparison-table td {
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--color-bg-light);
+}
+
+.comparison-table strong {
+  color: var(--color-primary);
+}
+
+/* Etapas do Processo de Atendimento */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.process-step-card {
+  background-color: var(--color-white);
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step-number {
+  background-color: rgba(201, 96, 16, 0.12);
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.process-step-card h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.process-step-card p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Banners e Boxes de CTA com Background de Imagem */
+.cta-banner {
+  background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.90), rgba(15, 42, 74, 0.90)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--color-white);
+  padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-banner h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.cta-subtext {
+  color: #cbd5e1;
+  font-size: 1rem;
+  max-width: 650px;
+  margin-bottom: 0.5rem;
+}
+
+.cta-banner-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cta-box-inline {
+  margin-top: 2.5rem;
+  background-color: var(--color-white);
+  padding: 1.5rem 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 15. Seção FAQ */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+details {
+  background-color: var(--color-white);
+  padding: 1.15rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+}
+
+summary {
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.2rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-left: 0.75rem;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  margin-top: 0.85rem;
+  color: var(--color-text-muted);
+  font-size: 0.925rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+/* 16. Rodapé Corporativo */
+footer {
+  background-color: var(--color-primary-dark);
+  color: #94a3b8;
+  padding: 3.5rem 0 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: var(--color-white);
+  margin-bottom: 0.85rem;
+}
+
+.footer-col p, .footer-col address {
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.825rem;
+  color: #64748b;
+}
+
+/* 17. Botão Flutuante do WhatsApp */
+.whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+  z-index: 9999;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: #1da851;
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
+}
+
+/* ==========================================================================
+   18. RESPONSIVIDADE & MOBILE
+   ========================================================================== */
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-main-grid, .contact-main-grid, .blog-layout-grid, .blog-featured-card {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .blog-posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-wrapper {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.65rem 0;
+  }
+
+  .logo img {
+    max-width: 135px;
+  }
+
+  header.scrolled .logo img {
+    max-width: 110px;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
+  }
+
+  .nav-menu a {
+    font-size: 0.85rem;
+  }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .hero, .page-hero {
+    padding: 2.5rem 0;
+  }
+
+  .page-hero-title {
+    font-size: 1.6rem;
+  }
+
+  .page-hero-subtitle {
+    font-size: 0.95rem;
+  }
+
+  .hero-content, .grid-3, .footer-grid, .directives-grid, .process-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .hero-text h1 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  .section {
+    padding: 2.75rem 0;
+  }
+
+  .section-title, .section-title-left {
+    font-size: 1.35rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .card, .contact-form-card, .blog-featured-content {
+    padding: 1.25rem;
+  }
+
+  .blog-featured-title {
+    font-size: 1.3rem;
+  }
+
+  .cta-banner {
+    padding: 1.75rem 1rem;
+  }
+
+  .cta-banner h3 {
+    font-size: 1.2rem;
+  }
+
+  .cta-banner-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-box-inline {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.15rem 1rem;
+  }
+
+  .btn-cta {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}
