@@ -272,6 +272,12 @@ header.scrolled .logo img {
   gap: 2rem;
 }
 
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .card {
   background-color: var(--color-white);
   border: none;
@@ -529,24 +535,159 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   13. ESTRUTURAS ESPECÍFICAS DO BLOG
+   13. ESTRUTURAS DO BLOG (ARTIGO EM DESTAQUE + SIDEBAR DE CATEGORIAS)
    ========================================================================== */
-.blog-card-meta {
-  font-size: 0.8rem;
+
+/* Texto Introdutório do Blog */
+.blog-intro-text {
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+/* Artigo em Destaque (Full Width / Highlighted Card) */
+.blog-featured-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  margin-bottom: 4rem;
+  transition: var(--transition-fast);
+}
+
+.blog-featured-card:hover {
+  box-shadow: var(--shadow-card-hover);
+  transform: translateY(-3px);
+}
+
+.blog-featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.blog-featured-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-meta-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.blog-badge-tag {
+  background-color: rgba(201, 96, 16, 0.12);
   color: var(--color-accent);
+  font-size: 0.75rem;
   font-weight: 700;
+  padding: 0.3rem 0.7rem;
+  border-radius: var(--radius-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
+}
+
+.blog-meta-details {
+  font-size: 0.825rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+.blog-featured-title {
+  font-size: 1.65rem;
+  font-weight: 800;
+  color: var(--color-primary);
+  line-height: 1.3;
+  margin-bottom: 1rem;
+}
+
+.blog-featured-excerpt {
+  color: var(--color-text-muted);
+  font-size: 0.975rem;
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+/* Grid com Sidebar para Artigos Secundários */
+.blog-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.blog-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+/* Sidebar de Categorias */
+.blog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.blog-sidebar-widget {
+  background-color: var(--color-white);
+  padding: 1.75rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}
+
+.blog-sidebar-title {
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.blog-category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.blog-category-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-main);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  padding: 0.4rem 0;
+  transition: var(--transition-fast);
+}
+
+.blog-category-item a:hover {
+  color: var(--color-accent);
 }
 
 .blog-badge-soon {
   display: inline-block;
   background-color: var(--color-border);
   color: var(--color-text-muted);
-  font-size: 0.75rem;
+  font-size: 0.725rem;
   font-weight: 600;
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   border-radius: var(--radius-sm);
   margin-bottom: 0.75rem;
   width: fit-content;
@@ -720,9 +861,12 @@ footer {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .about-main-grid, .contact-main-grid {
+  .about-main-grid, .contact-main-grid, .blog-layout-grid, .blog-featured-card {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+  .blog-posts-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -802,8 +946,12 @@ footer {
     margin-bottom: 1.25rem;
   }
 
-  .card, .contact-form-card {
+  .card, .contact-form-card, .blog-featured-content {
     padding: 1.25rem;
+  }
+
+  .blog-featured-title {
+    font-size: 1.3rem;
   }
 
   .cta-banner {
