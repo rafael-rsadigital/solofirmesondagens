@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (DESKTOP & MOBILE FIX)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL CORRIGIDO (MENU HORIZONTAL FIXO)
    ========================================================================== */
 
 /* 1. Importação da Fonte Corporativa */
@@ -25,10 +25,10 @@
 
   --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
   --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
-  --shadow-dropdown: 0 12px 30px rgba(15, 42, 74, 0.18);
+  --shadow-dropdown: 0 12px 30px rgba(15, 42, 74, 0.20);
   --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
 
-  --transition-fast: all 0.25s ease;
+  --transition-fast: all 0.2s ease;
 }
 
 /* 3. Reset Global & Trava Anti-Rolagem Lateral */
@@ -91,7 +91,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.85rem 0;
   transition: var(--transition-fast);
 }
 
@@ -109,12 +109,29 @@ header.scrolled .logo img {
   max-width: 130px;
 }
 
-/* 6. Navegação Principal (Desktop) */
+/* ==========================================================================
+   6. NAVEGAÇÃO PRINCIPAL (ESTRITAMENTE HORIZONTAL LADO A LADO)
+   ========================================================================== */
+.nav-menu {
+  display: flex;
+  align-items: center;
+}
+
 .nav-menu ul {
   display: flex;
-  list-style: none;
+  flex-direction: row;               /* Força rigorosamente o layout em linha lado a lado */
   align-items: center;
+  list-style: none;
   gap: 1.25rem;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;               /* Evita que itens do menu quebrem linha */
+}
+
+.nav-menu li {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
 }
 
 .nav-menu a {
@@ -129,18 +146,32 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
+/* Botão de Destaque no Header */
+.btn-header {
+  background-color: var(--color-accent);
+  color: var(--color-white) !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.btn-header:hover {
+  background-color: var(--color-accent-hover);
+}
+
 /* ==========================================================================
-   7. DROPDOWN DE SERVIÇOS (DESKTOP: FLUTUANTE VIA POSITION ABSOLUTE)
+   7. SUBMENU DROPDOWN DE SERVIÇOS (CAIXA SUSPENSA FLUTUANTE)
    ========================================================================== */
 .dropdown {
-  position: relative; /* Referência fundamental para o absolute do submenu */
+  position: relative; /* Âncora absoluta obrigatória */
 }
 
 .dropdown-toggle {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   text-decoration: none;
   color: var(--color-text-main);
   font-weight: 500;
@@ -155,36 +186,31 @@ header.scrolled .logo img {
   display: inline-block;
 }
 
-/* Submenu Flutuante (NÃO Empurra a Página) */
+/* Submenu Totalmente Flutuante (NÃO Empurra a Página nem os Outros Itens) */
 .dropdown-menu {
+  display: none;                     /* Oculto por padrão */
   position: absolute;
-  top: 100%;
+  top: 100%;                         /* Aparece logo abaixo do botão Serviços */
   left: 0;
   background-color: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-dropdown);
-  min-width: 210px;
+  min-width: 200px;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
   list-style: none;
-  z-index: 1000;
-  
-  /* Escondido por padrão com transição suave */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(15px);
-  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
-  pointer-events: none; /* Evita cliques acidentais enquanto invisível */
+  z-index: 2000;                     /* Camada superior para sobrepor qualquer conteúdo */
 }
 
 .dropdown-menu li {
+  display: block;
   width: 100%;
 }
 
 .dropdown-menu li a {
   display: block;
-  padding: 0.65rem 1.25rem;
+  padding: 0.65rem 1.15rem;
   font-size: 0.875rem;
   color: var(--color-text-main);
   text-decoration: none;
@@ -202,33 +228,14 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* Exibe o submenu quando o container .dropdown tiver a classe .active OU no hover */
-.dropdown.active .dropdown-menu,
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-  pointer-events: auto;
+/* Exibe a caixa suspensa APENAS quando a classe .active for aplicada pelo JS no clique */
+.dropdown.active .dropdown-menu {
+  display: block;
 }
 
-/* Gira a setinha ao ativar */
-.dropdown.active .dropdown-toggle .arrow,
-.dropdown:hover .dropdown-toggle .arrow {
+/* Gira a setinha ao abrir */
+.dropdown.active .dropdown-toggle .arrow {
   transform: rotate(180deg);
-}
-
-/* Botão de Destaque no Header */
-.btn-header {
-  background-color: var(--color-accent);
-  color: var(--color-white) !important;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
-}
-
-.btn-header:hover {
-  background-color: var(--color-accent-hover);
 }
 
 /* 8. Hero / Dobra Principal */
@@ -535,7 +542,7 @@ footer {
 }
 
 /* ==========================================================================
-   14. RESPONSIVIDADE & SUBMENU MOBILE (MODO SANFONA)
+   14. RESPONSIVIDADE & AJUSTES
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
@@ -560,12 +567,13 @@ footer {
 
   .nav-menu {
     width: 100%;
+    overflow-x: auto;                  /* Permite rolagem horizontal suave do menu se a tela do celular for muito pequena */
   }
 
   .nav-menu ul {
     justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem 0.85rem;
+    flex-wrap: nowrap;
+    gap: 0.65rem 0.85rem;
   }
 
   .nav-menu a {
@@ -577,41 +585,6 @@ footer {
     font-size: 0.8rem;
   }
 
-  /* NO MOBILE: Submenu vira Sanfona Interna (Position Static + Display Toggle) */
-  .dropdown {
-    width: 100%;
-    text-align: center;
-  }
-
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    margin-top: 0.35rem;
-    min-width: 100%;
-    background-color: var(--color-bg-light);
-    border-radius: var(--radius-sm);
-    
-    /* Regras de ocultar/exibir estritas para mobile */
-    display: none;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    pointer-events: auto;
-  }
-
-  .dropdown.active .dropdown-menu {
-    display: block; /* Expande para baixo suavemente apenas no clique */
-  }
-
-  .dropdown-menu li a {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-
-  /* Ajustes gerais das seções mobile */
   .hero {
     padding: 2.5rem 0;
   }
