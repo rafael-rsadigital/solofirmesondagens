@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL CORRIGIDO (MENU HORIZONTAL FIXO)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (MENU LIMPO & ENXUTO)
    ========================================================================== */
 
 /* 1. Importação da Fonte Corporativa */
@@ -25,7 +25,6 @@
 
   --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
   --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
-  --shadow-dropdown: 0 12px 30px rgba(15, 42, 74, 0.20);
   --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
 
   --transition-fast: all 0.2s ease;
@@ -109,9 +108,7 @@ header.scrolled .logo img {
   max-width: 130px;
 }
 
-/* ==========================================================================
-   6. NAVEGAÇÃO PRINCIPAL (ESTRITAMENTE HORIZONTAL LADO A LADO)
-   ========================================================================== */
+/* 6. Navegação Principal (Horizontal Limpa Lado a Lado) */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -119,26 +116,25 @@ header.scrolled .logo img {
 
 .nav-menu ul {
   display: flex;
-  flex-direction: row;               /* Força rigorosamente o layout em linha lado a lado */
+  flex-direction: row;
   align-items: center;
   list-style: none;
-  gap: 1.25rem;
+  gap: 1.75rem;
   margin: 0;
   padding: 0;
-  white-space: nowrap;               /* Evita que itens do menu quebrem linha */
+  white-space: nowrap;
 }
 
 .nav-menu li {
   display: inline-flex;
   align-items: center;
-  position: relative;
 }
 
 .nav-menu a {
   text-decoration: none;
   color: var(--color-text-main);
   font-weight: 500;
-  font-size: 0.925rem;
+  font-size: 0.95rem;
   transition: var(--transition-fast);
 }
 
@@ -146,99 +142,7 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* Botão de Destaque no Header */
-.btn-header {
-  background-color: var(--color-accent);
-  color: var(--color-white) !important;
-  font-weight: 600;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
-}
-
-.btn-header:hover {
-  background-color: var(--color-accent-hover);
-}
-
-/* ==========================================================================
-   7. SUBMENU DROPDOWN DE SERVIÇOS (CAIXA SUSPENSA FLUTUANTE)
-   ========================================================================== */
-.dropdown {
-  position: relative; /* Âncora absoluta obrigatória */
-}
-
-.dropdown-toggle {
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  text-decoration: none;
-  color: var(--color-text-main);
-  font-weight: 500;
-  font-size: 0.925rem;
-  padding: 0.25rem 0;
-}
-
-.dropdown-toggle .arrow {
-  font-size: 0.65rem;
-  color: var(--color-accent);
-  transition: transform 0.25s ease;
-  display: inline-block;
-}
-
-/* Submenu Totalmente Flutuante (NÃO Empurra a Página nem os Outros Itens) */
-.dropdown-menu {
-  display: none;                     /* Oculto por padrão */
-  position: absolute;
-  top: 100%;                         /* Aparece logo abaixo do botão Serviços */
-  left: 0;
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-dropdown);
-  min-width: 200px;
-  padding: 0.5rem 0;
-  margin-top: 0.5rem;
-  list-style: none;
-  z-index: 2000;                     /* Camada superior para sobrepor qualquer conteúdo */
-}
-
-.dropdown-menu li {
-  display: block;
-  width: 100%;
-}
-
-.dropdown-menu li a {
-  display: block;
-  padding: 0.65rem 1.15rem;
-  font-size: 0.875rem;
-  color: var(--color-text-main);
-  text-decoration: none;
-  border-bottom: 1px solid #f1f5f9;
-  white-space: nowrap;
-  transition: var(--transition-fast);
-}
-
-.dropdown-menu li:last-child a {
-  border-bottom: none;
-}
-
-.dropdown-menu li a:hover {
-  background-color: var(--color-bg-light);
-  color: var(--color-accent);
-}
-
-/* Exibe a caixa suspensa APENAS quando a classe .active for aplicada pelo JS no clique */
-.dropdown.active .dropdown-menu {
-  display: block;
-}
-
-/* Gira a setinha ao abrir */
-.dropdown.active .dropdown-toggle .arrow {
-  transform: rotate(180deg);
-}
-
-/* 8. Hero / Dobra Principal */
+/* 7. Hero / Dobra Principal */
 .hero {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -281,7 +185,7 @@ header.scrolled .logo img {
   text-align: center;
 }
 
-/* 9. Botões CTA */
+/* 8. Botões CTA */
 .btn-cta {
   display: inline-block;
   background-color: var(--color-accent);
@@ -307,7 +211,7 @@ header.scrolled .logo img {
   font-size: 0.875rem;
 }
 
-/* 10. Seções & Grids Gerais */
+/* 9. Seções & Grids Gerais */
 .section {
   padding: 4.5rem 0;
 }
@@ -370,7 +274,7 @@ header.scrolled .logo img {
   text-decoration: underline;
 }
 
-/* 11. Seção Institucional */
+/* 10. Seção Institucional */
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -456,7 +360,7 @@ header.scrolled .logo img {
   align-items: center;
 }
 
-/* 12. Seção FAQ */
+/* 11. Seção FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -508,7 +412,7 @@ details p {
   padding-top: 0.75rem;
 }
 
-/* 13. Rodapé */
+/* 12. Rodapé */
 footer {
   background-color: var(--color-primary-dark);
   color: #94a3b8;
@@ -542,7 +446,7 @@ footer {
 }
 
 /* ==========================================================================
-   14. RESPONSIVIDADE & AJUSTES
+   13. RESPONSIVIDADE & MOBILE
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
@@ -567,22 +471,16 @@ footer {
 
   .nav-menu {
     width: 100%;
-    overflow-x: auto;                  /* Permite rolagem horizontal suave do menu se a tela do celular for muito pequena */
   }
 
   .nav-menu ul {
     justify-content: center;
-    flex-wrap: nowrap;
-    gap: 0.65rem 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.5rem 1rem;
   }
 
   .nav-menu a {
-    font-size: 0.825rem;
-  }
-
-  .btn-header {
-    padding: 0.35rem 0.75rem;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
   }
 
   .hero {
