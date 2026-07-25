@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // 1. Reduz o Header ao Rolar a Página
+  // 1. Reduz o Header ao Rolar a Página (Scroll Effect)
   const header = document.getElementById("main-header");
   if (header) {
     window.addEventListener("scroll", () => {
@@ -11,22 +11,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Alterna (Toggle) o Submenu de Serviços ao Clicar
+  // 2. Submenu de Serviços (Clique / Toggle de Classe .active)
   const dropdownParent = document.querySelector(".dropdown");
   const dropdownToggle = document.getElementById("servicesToggle");
 
   if (dropdownToggle && dropdownParent) {
     dropdownToggle.addEventListener("click", (event) => {
-      event.preventDefault(); // Impede o salto de página do href="#"
+      event.preventDefault(); // Impede o salto de página do link #
       
-      // Alterna a classe 'active' para abrir ou fechar o submenu
+      // Alterna a classe .active no container pai
       const isOpen = dropdownParent.classList.toggle("active");
       
       // Atualiza atributo de acessibilidade
       dropdownToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
-    // Fecha o submenu automaticamente caso o usuário clique fora dele
+    // Fecha o submenu automaticamente ao clicar fora
     document.addEventListener("click", (event) => {
       if (!dropdownParent.contains(event.target)) {
         dropdownParent.classList.remove("active");
