@@ -145,9 +145,13 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* 7. Hero / Dobra Principal (Home) */
+/* 7. Hero / Dobra Principal (Home Page com Background Personalizado) */
 .hero {
   background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   padding: 5rem 0;
 }
@@ -176,7 +180,7 @@ header.scrolled .logo img {
 
 .hero-image img {
   border-radius: var(--radius-md);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   width: 100%;
 }
 
@@ -188,9 +192,13 @@ header.scrolled .logo img {
   text-align: center;
 }
 
-/* 8. Cabeçalho das Páginas Internas (Subpáginas) */
+/* 8. Cabeçalho das Páginas Internas (Subpáginas com Background Personalizado) */
 .page-hero {
   background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   padding: 4rem 0 3.5rem 0;
   text-align: center;
@@ -534,11 +542,7 @@ textarea.form-control {
   min-height: 120px;
 }
 
-/* ==========================================================================
-   13. ESTRUTURAS DO BLOG (ARTIGO EM DESTAQUE + SIDEBAR DE CATEGORIAS)
-   ========================================================================== */
-
-/* Texto Introdutório do Blog */
+/* 13. Estruturas Específicas do Blog */
 .blog-intro-text {
   color: var(--color-text-muted);
   font-size: 1.05rem;
@@ -548,7 +552,6 @@ textarea.form-control {
   text-align: center;
 }
 
-/* Artigo em Destaque (Full Width / Highlighted Card) */
 .blog-featured-card {
   background-color: var(--color-white);
   border-radius: var(--radius-lg);
@@ -618,7 +621,6 @@ textarea.form-control {
   margin-bottom: 1.5rem;
 }
 
-/* Grid com Sidebar para Artigos Secundários */
 .blog-layout-grid {
   display: grid;
   grid-template-columns: 1fr 300px;
@@ -632,7 +634,6 @@ textarea.form-control {
   gap: 1.75rem;
 }
 
-/* Sidebar de Categorias */
 .blog-sidebar {
   display: flex;
   flex-direction: column;
@@ -681,6 +682,15 @@ textarea.form-control {
   color: var(--color-accent);
 }
 
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
 .blog-badge-soon {
   display: inline-block;
   background-color: var(--color-border);
@@ -700,9 +710,13 @@ textarea.form-control {
   cursor: not-allowed;
 }
 
-/* Banners e Boxes de CTA */
+/* Banners e Boxes de CTA com Background de Imagem */
 .cta-banner {
   background-color: var(--color-primary);
+  background-image: linear-gradient(rgba(15, 42, 74, 0.90), rgba(15, 42, 74, 0.90)), url('/images/backgrounds/hero.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: var(--color-white);
   padding: 2.5rem 1.5rem;
   border-radius: var(--radius-md);
