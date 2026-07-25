@@ -145,7 +145,7 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* 7. Hero / Dobra Principal (Home Page com Background Personalizado) */
+/* 7. Hero / Dobra Principal (Home Page com Background) */
 .hero {
   background-color: var(--color-primary);
   background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
@@ -192,7 +192,7 @@ header.scrolled .logo img {
   text-align: center;
 }
 
-/* 8. Cabeçalho das Páginas Internas (Subpáginas com Background Personalizado) */
+/* 8. Cabeçalho das Páginas Internas (Subpáginas com Background) */
 .page-hero {
   background-color: var(--color-primary);
   background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
@@ -710,6 +710,100 @@ textarea.form-control {
   cursor: not-allowed;
 }
 
+/* ==========================================================================
+   14. ESTRUTURAS DO HUB DE SERVIÇOS (TABELA COMPARATIVA & PROCESSO)
+   ========================================================================== */
+
+/* Tabela Comparativa de Métodos */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  margin-top: 1.5rem;
+  background-color: var(--color-white);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.comparison-table th {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 1.15rem 1.25rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.comparison-table td {
+  padding: 1.15rem 1.25rem;
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+.comparison-table tr:nth-child(even) {
+  background-color: var(--color-bg-light);
+}
+
+.comparison-table strong {
+  color: var(--color-primary);
+}
+
+/* Etapas do Processo de Atendimento */
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.process-step-card {
+  background-color: var(--color-white);
+  padding: 1.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+
+.process-step-number {
+  background-color: rgba(201, 96, 16, 0.12);
+  color: var(--color-accent);
+  font-weight: 800;
+  font-size: 1.1rem;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.process-step-card h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.process-step-card p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+
 /* Banners e Boxes de CTA com Background de Imagem */
 .cta-banner {
   background-color: var(--color-primary);
@@ -757,7 +851,7 @@ textarea.form-control {
   align-items: center;
 }
 
-/* 14. Seção FAQ */
+/* 15. Seção FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -809,7 +903,7 @@ details p {
   padding-top: 0.75rem;
 }
 
-/* 15. Rodapé Corporativo */
+/* 16. Rodapé Corporativo */
 footer {
   background-color: var(--color-primary-dark);
   color: #94a3b8;
@@ -842,7 +936,7 @@ footer {
   color: #64748b;
 }
 
-/* 16. Botão Flutuante do WhatsApp */
+/* 17. Botão Flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
   width: 56px;
@@ -869,10 +963,13 @@ footer {
 }
 
 /* ==========================================================================
-   17. RESPONSIVIDADE & MOBILE
+   18. RESPONSIVIDADE & MOBILE
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
   .about-main-grid, .contact-main-grid, .blog-layout-grid, .blog-featured-card {
@@ -937,7 +1034,7 @@ footer {
     font-size: 0.95rem;
   }
 
-  .hero-content, .grid-3, .footer-grid, .directives-grid {
+  .hero-content, .grid-3, .footer-grid, .directives-grid, .process-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
