@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (VERCEL READY)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (DESKTOP & MOBILE FIX)
    ========================================================================== */
 
 /* 1. Importação da Fonte Corporativa */
@@ -7,15 +7,15 @@
 
 /* 2. Variáveis de Design */
 :root {
-  --color-primary: #0f2a4a;        /* Azul Marinho Fechado (Engenharia & Confiança) */
-  --color-primary-dark: #081424;   /* Tom Escuro para o Rodapé */
+  --color-primary: #0f2a4a;        /* Azul Marinho Fechado */
+  --color-primary-dark: #081424;   /* Tom Escuro para Rodapé */
   --color-accent: #c96010;         /* Terracota / Laranja Engenharia */
-  --color-accent-hover: #a34b09;    /* Terracota escurecido no hover */
-  --color-text-main: #111827;      /* Grafite para leitura confortável */
-  --color-text-muted: #4b5563;     /* Texto secundário e legendas */
-  --color-bg-light: #f8fafc;      /* Cinza técnico leve para seções alternadas */
+  --color-accent-hover: #a34b09;    /* Hover do Terracota */
+  --color-text-main: #111827;      /* Grafite para leitura */
+  --color-text-muted: #4b5563;     /* Texto secundário */
+  --color-bg-light: #f8fafc;      /* Cinza leve para seções alternadas */
   --color-white: #ffffff;
-  --color-border: #e2e8f0;         /* Bordas e divisores discretos */
+  --color-border: #e2e8f0;         /* Bordas discretas */
 
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
@@ -25,10 +25,10 @@
 
   --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
   --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
-  --shadow-dropdown: 0 10px 25px rgba(15, 42, 74, 0.15);
+  --shadow-dropdown: 0 12px 30px rgba(15, 42, 74, 0.18);
   --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
 
-  --transition-fast: all 0.2s ease-in-out;
+  --transition-fast: all 0.25s ease;
 }
 
 /* 3. Reset Global & Trava Anti-Rolagem Lateral */
@@ -109,7 +109,7 @@ header.scrolled .logo img {
   max-width: 130px;
 }
 
-/* 6. Navegação Principal */
+/* 6. Navegação Principal (Desktop) */
 .nav-menu ul {
   display: flex;
   list-style: none;
@@ -130,32 +130,33 @@ header.scrolled .logo img {
 }
 
 /* ==========================================================================
-   DROPDOWN DE SERVIÇOS (OCULTO POR PADRÃO - ATIVADO VIA JS CLIQUE)
+   7. DROPDOWN DE SERVIÇOS (DESKTOP: FLUTUANTE VIA POSITION ABSOLUTE)
    ========================================================================== */
 .dropdown {
-  position: relative;
+  position: relative; /* Referência fundamental para o absolute do submenu */
 }
 
 .dropdown-toggle {
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
   text-decoration: none;
   color: var(--color-text-main);
   font-weight: 500;
   font-size: 0.925rem;
+  padding: 0.25rem 0;
 }
 
 .dropdown-toggle .arrow {
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   color: var(--color-accent);
-  transition: transform 0.2s ease;
+  transition: transform 0.25s ease;
+  display: inline-block;
 }
 
-/* Estado Padrão: Oculto e sem ocupar espaço */
+/* Submenu Flutuante (NÃO Empurra a Página) */
 .dropdown-menu {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -167,7 +168,14 @@ header.scrolled .logo img {
   padding: 0.5rem 0;
   margin-top: 0.5rem;
   list-style: none;
-  z-index: 1100;
+  z-index: 1000;
+  
+  /* Escondido por padrão com transição suave */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+  pointer-events: none; /* Evita cliques acidentais enquanto invisível */
 }
 
 .dropdown-menu li {
@@ -182,6 +190,7 @@ header.scrolled .logo img {
   text-decoration: none;
   border-bottom: 1px solid #f1f5f9;
   white-space: nowrap;
+  transition: var(--transition-fast);
 }
 
 .dropdown-menu li:last-child a {
@@ -193,16 +202,22 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* Estado Ativo (Exibido ao Clicar no Item 'Serviços') */
-.dropdown.active .dropdown-menu {
-  display: block;
+/* Exibe o submenu quando o container .dropdown tiver a classe .active OU no hover */
+.dropdown.active .dropdown-menu,
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
-.dropdown.active .dropdown-toggle .arrow {
+/* Gira a setinha ao ativar */
+.dropdown.active .dropdown-toggle .arrow,
+.dropdown:hover .dropdown-toggle .arrow {
   transform: rotate(180deg);
 }
 
-/* Botão do Cabeçalho */
+/* Botão de Destaque no Header */
 .btn-header {
   background-color: var(--color-accent);
   color: var(--color-white) !important;
@@ -216,7 +231,7 @@ header.scrolled .logo img {
   background-color: var(--color-accent-hover);
 }
 
-/* 7. Hero / Dobra Principal */
+/* 8. Hero / Dobra Principal */
 .hero {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -259,7 +274,7 @@ header.scrolled .logo img {
   text-align: center;
 }
 
-/* 8. Botões CTA */
+/* 9. Botões CTA */
 .btn-cta {
   display: inline-block;
   background-color: var(--color-accent);
@@ -285,7 +300,7 @@ header.scrolled .logo img {
   font-size: 0.875rem;
 }
 
-/* 9. Seções & Grids Gerais */
+/* 10. Seções & Grids Gerais */
 .section {
   padding: 4.5rem 0;
 }
@@ -348,7 +363,7 @@ header.scrolled .logo img {
   text-decoration: underline;
 }
 
-/* 10. Seção Institucional (Sobre a Solofirme) */
+/* 11. Seção Institucional */
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -434,7 +449,7 @@ header.scrolled .logo img {
   align-items: center;
 }
 
-/* 11. Seção FAQ (Sanfona Accordion) */
+/* 12. Seção FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -486,7 +501,7 @@ details p {
   padding-top: 0.75rem;
 }
 
-/* 12. Rodapé Corporativo */
+/* 13. Rodapé */
 footer {
   background-color: var(--color-primary-dark);
   color: #94a3b8;
@@ -520,7 +535,7 @@ footer {
 }
 
 /* ==========================================================================
-   13. RESPONSIVIDADE E AJUSTES PARA TELAS MENORES / MOBILE
+   14. RESPONSIVIDADE & SUBMENU MOBILE (MODO SANFONA)
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
@@ -562,24 +577,41 @@ footer {
     font-size: 0.8rem;
   }
 
-  /* Posicionamento do Submenu no Mobile */
+  /* NO MOBILE: Submenu vira Sanfona Interna (Position Static + Display Toggle) */
+  .dropdown {
+    width: 100%;
+    text-align: center;
+  }
+
   .dropdown-menu {
     position: static;
     box-shadow: none;
     border: none;
-    padding: 0.25rem 0;
-    min-width: auto;
+    padding: 0;
+    margin-top: 0.35rem;
+    min-width: 100%;
     background-color: var(--color-bg-light);
     border-radius: var(--radius-sm);
-    margin-top: 0.35rem;
+    
+    /* Regras de ocultar/exibir estritas para mobile */
+    display: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  .dropdown.active .dropdown-menu {
+    display: block; /* Expande para baixo suavemente apenas no clique */
   }
 
   .dropdown-menu li a {
-    padding: 0.4rem 0.75rem;
-    font-size: 0.775rem;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
     text-align: center;
   }
 
+  /* Ajustes gerais das seções mobile */
   .hero {
     padding: 2.5rem 0;
   }
