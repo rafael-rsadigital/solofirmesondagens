@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (MENU LIMPO & ENXUTO)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (MENU CENTRALIZADO + WHATSAPP FLUTUANTE)
    ========================================================================== */
 
 /* 1. Importação da Fonte Corporativa */
@@ -108,9 +108,13 @@ header.scrolled .logo img {
   max-width: 130px;
 }
 
-/* 6. Navegação Principal (Horizontal Limpa Lado a Lado) */
+/* ==========================================================================
+   6. NAVEGAÇÃO PRINCIPAL (PERFEITAMENTE CENTRALIZADA)
+   ========================================================================== */
 .nav-menu {
+  flex: 1;                           /* Ocupa o espaço restante para permitir centralização */
   display: flex;
+  justify-content: center;            /* Centraliza a lista horizontalmente */
   align-items: center;
 }
 
@@ -118,8 +122,9 @@ header.scrolled .logo img {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: center;
   list-style: none;
-  gap: 1.75rem;
+  gap: 2rem;
   margin: 0;
   padding: 0;
   white-space: nowrap;
@@ -142,7 +147,35 @@ header.scrolled .logo img {
   color: var(--color-accent);
 }
 
-/* 7. Hero / Dobra Principal */
+/* ==========================================================================
+   7. BOTÃO FLUTUANTE DO WHATSAPP (FIXO CANTO INFERIOR DIREITO)
+   ========================================================================== */
+.whatsapp-float {
+  position: fixed;
+  width: 56px;
+  height: 56px;
+  bottom: 24px;
+  right: 24px;
+  background-color: #25d366;
+  color: #ffffff;
+  border-radius: 50px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
+  z-index: 9999;
+  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+  text-decoration: none;
+}
+
+.whatsapp-float:hover {
+  background-color: #1da851;
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
+}
+
+/* 8. Hero / Dobra Principal */
 .hero {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -185,7 +218,7 @@ header.scrolled .logo img {
   text-align: center;
 }
 
-/* 8. Botões CTA */
+/* 9. Botões CTA */
 .btn-cta {
   display: inline-block;
   background-color: var(--color-accent);
@@ -211,7 +244,7 @@ header.scrolled .logo img {
   font-size: 0.875rem;
 }
 
-/* 9. Seções & Grids Gerais */
+/* 10. Seções & Grids Gerais */
 .section {
   padding: 4.5rem 0;
 }
@@ -274,7 +307,7 @@ header.scrolled .logo img {
   text-decoration: underline;
 }
 
-/* 10. Seção Institucional */
+/* 11. Seção Institucional */
 .about-grid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -360,7 +393,7 @@ header.scrolled .logo img {
   align-items: center;
 }
 
-/* 11. Seção FAQ */
+/* 12. Seção FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -412,7 +445,7 @@ details p {
   padding-top: 0.75rem;
 }
 
-/* 12. Rodapé */
+/* 13. Rodapé */
 footer {
   background-color: var(--color-primary-dark);
   color: #94a3b8;
@@ -446,7 +479,7 @@ footer {
 }
 
 /* ==========================================================================
-   13. RESPONSIVIDADE & MOBILE
+   14. RESPONSIVIDADE & MOBILE
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
@@ -481,6 +514,18 @@ footer {
 
   .nav-menu a {
     font-size: 0.85rem;
+  }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .whatsapp-float svg {
+    width: 24px;
+    height: 24px;
   }
 
   .hero {
