@@ -1,13 +1,76 @@
 /* ==========================================================================
-   HEADER & NAVEGAÇÃO COM EFEITO REDUZIDO (SCROLLED)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL CORRIGIDO & PREMIUM
    ========================================================================== */
+
+/* 1. Importação da Fonte com Fallback Seguro */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+/* 2. Variáveis de Design */
+:root {
+  --color-primary: #0f2a4a;        /* Azul Marinho */
+  --color-primary-dark: #081424;   /* Azul Escuro Rodapé */
+  --color-accent: #c96010;         /* Terracota / Laranja Engenharia */
+  --color-accent-hover: #a34b09;
+  --color-text-main: #111827;      /* Grafite Leitura */
+  --color-text-muted: #4b5563;     /* Texto Secundário */
+  --color-bg-light: #f8fafc;      /* Cinza Soft */
+  --color-white: #ffffff;
+  --color-border: #e2e8f0;
+
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+
+  --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
+  --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
+  --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  --transition-fast: all 0.25s ease-in-out;
+}
+
+/* 3. Reset Global */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text-main);
+  background-color: var(--color-white);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. Layout Base & Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* 5. Header Dinâmico (Reduz ao Rolar) */
 header {
   background-color: var(--color-white);
   border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: var(--shadow-sm);
   transition: var(--transition-fast);
 }
 
@@ -15,37 +78,32 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 0;
   transition: var(--transition-fast);
 }
 
 .logo img {
-  display: block;
-  height: auto;
   max-width: 190px;
+  height: auto;
   transition: var(--transition-fast);
 }
 
-/* Estado Reduzido ao Rolar a Página (Desktop e Mobile) */
-header.scrolled {
-  box-shadow: 0 4px 20px rgba(15, 42, 74, 0.08);
-}
-
 header.scrolled .header-wrapper {
-  padding: 0.4rem 1.5rem; /* Diminui significativamente a altura do cabeçalho */
+  padding: 0.5rem 0;
 }
 
 header.scrolled .logo img {
-  max-width: 130px; /* Reduz a escala da logo ao rolar */
+  max-width: 130px;
 }
 
-nav ul {
+/* Menu de Navegação Desktop */
+.nav-menu ul {
   display: flex;
   list-style: none;
   gap: 1.5rem;
 }
 
-nav a {
+.nav-menu a {
   text-decoration: none;
   color: var(--color-text-main);
   font-weight: 500;
@@ -53,13 +111,11 @@ nav a {
   transition: var(--transition-fast);
 }
 
-nav a:hover {
+.nav-menu a:hover {
   color: var(--color-accent);
 }
 
-/* ==========================================================================
-   MENU HAMBÚRGUER (MOBILE)
-   ========================================================================== */
+/* Botão Hambúrguer (Mobile) */
 .mobile-menu-btn {
   display: none;
   background: none;
@@ -68,7 +124,6 @@ nav a:hover {
   padding: 0.5rem;
   flex-direction: column;
   gap: 5px;
-  z-index: 1001;
 }
 
 .hamburger-bar {
@@ -79,7 +134,316 @@ nav a:hover {
   border-radius: 2px;
 }
 
-/* Ajustes Responsivos do Menu */
+/* 6. Hero / Dobra Principal (Espaçamento Expandido) */
+.hero {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 6rem 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1.25rem;
+  color: var(--color-white);
+  letter-spacing: -0.01em;
+}
+
+.hero-text p {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+}
+
+.hero-image img {
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.image-caption {
+  display: block;
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* 7. Botões CTA Premium */
+.btn-cta {
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 0.9rem 1.8rem;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  box-shadow: var(--shadow-btn);
+  transition: var(--transition-fast);
+  border: none;
+}
+
+.btn-cta:hover {
+  background-color: var(--color-accent-hover);
+  transform: translateY(-2px);
+}
+
+.btn-sm {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.875rem;
+}
+
+/* 8. Seções & Grids */
+.section {
+  padding: 5rem 0;
+}
+
+.section-bg {
+  background-color: var(--color-bg-light);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 2.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* Cards sem bordas duras + sombra e elevação */
+.card {
+  background-color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  color: var(--color-primary);
+  margin-bottom: 0.75rem;
+}
+
+.card p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.card-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+}
+
+/* 9. Seção Institucional (Sobre a Solofirme) */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.about-text h2 {
+  font-size: 2rem;
+  color: var(--color-primary);
+  margin-bottom: 1.25rem;
+}
+
+.about-text p, .about-tech p {
+  color: var(--color-text-muted);
+  font-size: 0.975rem;
+  margin-bottom: 1rem;
+}
+
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.mv-item {
+  background-color: var(--color-white);
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+}
+
+.mv-item h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.mv-item p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.about-tech {
+  background-color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  height: fit-content;
+}
+
+.about-tech h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* Banners CTA */
+.cta-banner {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 2.5rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.cta-banner h3 {
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.cta-box-inline {
+  margin-top: 2.5rem;
+  background-color: var(--color-white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 10. FAQ (Accordion) */
+.faq-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+details {
+  background-color: var(--color-white);
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+}
+
+summary {
+  font-weight: 600;
+  color: var(--color-primary);
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.05rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  margin-left: 1rem;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  margin-top: 1rem;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  border-top: 1px solid var(--color-border);
+  padding-top: 0.75rem;
+}
+
+/* 11. Rodapé */
+footer {
+  background-color: var(--color-primary-dark);
+  color: #94a3b8;
+  padding: 4rem 0 2rem 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: var(--color-white);
+  margin-bottom: 1rem;
+}
+
+.footer-col p, .footer-col address {
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.5rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* 12. Responsividade (Mobile) */
+@media (max-width: 992px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .mobile-menu-btn {
     display: flex;
@@ -92,37 +456,42 @@ nav a:hover {
     width: 100%;
     background-color: var(--color-white);
     border-bottom: 1px solid var(--color-border);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.35s ease-in-out;
   }
 
   .nav-menu.active {
-    max-height: 350px; /* Expande suavemente ao clicar no hambúrguer */
+    max-height: 400px;
   }
 
   .nav-menu ul {
     flex-direction: column;
     gap: 0;
-    padding: 1rem 0;
   }
 
   .nav-menu li a {
     display: block;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-    border-bottom: 1px solid #f1f5f9;
+    padding: 0.85rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
   }
 
-  /* Animação do X no Hambúrguer ao Abrir */
-  .mobile-menu-btn.active .hamburger-bar:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
+  .hero {
+    padding: 3.5rem 0;
   }
-  .mobile-menu-btn.active .hamburger-bar:nth-child(2) {
-    opacity: 0;
+
+  .hero-content, .about-grid, .grid-3, .footer-grid, .about-mission-vision {
+    grid-template-columns: 1fr;
   }
-  .mobile-menu-btn.active .hamburger-bar:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
+
+  .hero-text {
+    text-align: center;
+  }
+
+  .cta-box-inline {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
   }
 }
