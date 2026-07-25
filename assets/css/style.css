@@ -1,5 +1,5 @@
 /* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (ARQUITETURA CLEAN)
+   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (SISTEMA DE DESIGN)
    ========================================================================== */
 
 /* 1. Importação da Fonte Corporativa */
@@ -224,6 +224,7 @@ header.scrolled .logo img {
   transition: var(--transition-fast);
   border: none;
   text-align: center;
+  cursor: pointer;
 }
 
 .btn-cta:hover {
@@ -234,6 +235,10 @@ header.scrolled .logo img {
 .btn-sm {
   padding: 0.6rem 1.25rem;
   font-size: 0.875rem;
+}
+
+.btn-full {
+  width: 100%;
 }
 
 /* 10. Seções & Grids Gerais */
@@ -407,7 +412,126 @@ header.scrolled .logo img {
   margin: 0 auto;
 }
 
-/* 12. Banners e Bボックス de CTA */
+/* ==========================================================================
+   12. ESTRUTURAS ESPECÍFICAS DA PÁGINA "CONTATO"
+   ========================================================================== */
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-info-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.contact-info-item {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+}
+
+.contact-info-icon {
+  background-color: rgba(201, 96, 16, 0.1);
+  color: var(--color-accent);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-info-content h3 {
+  font-size: 1.1rem;
+  color: var(--color-primary);
+  margin-bottom: 0.35rem;
+}
+
+.contact-info-content p, .contact-info-content address {
+  font-style: normal;
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.contact-info-content a {
+  color: var(--color-accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-info-content a:hover {
+  text-decoration: underline;
+}
+
+/* Formulário de Contato */
+.contact-form-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: 2.25rem;
+  box-shadow: var(--shadow-card);
+}
+
+.contact-form-title {
+  font-size: 1.5rem;
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.925rem;
+  margin-bottom: 1.75rem;
+}
+
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--color-text-main);
+  margin-bottom: 0.4rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+  color: var(--color-text-main);
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  transition: var(--transition-fast);
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background-color: var(--color-white);
+  box-shadow: 0 0 0 3px rgba(201, 96, 16, 0.15);
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Banners e Boxes de CTA */
 .cta-banner {
   background-color: var(--color-primary);
   color: var(--color-white);
@@ -561,7 +685,7 @@ footer {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .about-main-grid {
+  .about-main-grid, .contact-main-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
@@ -643,7 +767,7 @@ footer {
     margin-bottom: 1.25rem;
   }
 
-  .card {
+  .card, .contact-form-card {
     padding: 1.25rem;
   }
 
