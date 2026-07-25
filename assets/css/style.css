@@ -412,9 +412,7 @@ header.scrolled .logo img {
   margin: 0 auto;
 }
 
-/* ==========================================================================
-   12. ESTRUTURAS ESPECÍFICAS DA PÁGINA "CONTATO"
-   ========================================================================== */
+/* 12. Estruturas Específicas da Página "Contato" */
 .contact-main-grid {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
@@ -475,7 +473,6 @@ header.scrolled .logo img {
   text-decoration: underline;
 }
 
-/* Formulário de Contato */
 .contact-form-card {
   background-color: var(--color-white);
   border-radius: var(--radius-md);
@@ -531,6 +528,37 @@ textarea.form-control {
   min-height: 120px;
 }
 
+/* ==========================================================================
+   13. ESTRUTURAS ESPECÍFICAS DO BLOG
+   ========================================================================== */
+.blog-card-meta {
+  font-size: 0.8rem;
+  color: var(--color-accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.blog-badge-soon {
+  display: inline-block;
+  background-color: var(--color-border);
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 0.75rem;
+  width: fit-content;
+}
+
+.blog-link-disabled {
+  color: #94a3b8;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: not-allowed;
+}
+
 /* Banners e Boxes de CTA */
 .cta-banner {
   background-color: var(--color-primary);
@@ -556,6 +584,13 @@ textarea.form-control {
   margin-bottom: 0.5rem;
 }
 
+.cta-banner-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .cta-box-inline {
   margin-top: 2.5rem;
   background-color: var(--color-white);
@@ -567,7 +602,7 @@ textarea.form-control {
   align-items: center;
 }
 
-/* 13. Seção FAQ */
+/* 14. Seção FAQ */
 .faq-container {
   max-width: 800px;
   margin: 0 auto;
@@ -619,7 +654,7 @@ details p {
   padding-top: 0.75rem;
 }
 
-/* 14. Rodapé Corporativo */
+/* 15. Rodapé Corporativo */
 footer {
   background-color: var(--color-primary-dark);
   color: #94a3b8;
@@ -652,7 +687,7 @@ footer {
   color: #64748b;
 }
 
-/* 15. Botão Flutuante do WhatsApp */
+/* 16. Botão Flutuante do WhatsApp */
 .whatsapp-float {
   position: fixed;
   width: 56px;
@@ -679,7 +714,7 @@ footer {
 }
 
 /* ==========================================================================
-   16. RESPONSIVIDADE & MOBILE
+   17. RESPONSIVIDADE & MOBILE
    ========================================================================== */
 @media (max-width: 992px) {
   .grid-3 {
@@ -777,6 +812,11 @@ footer {
 
   .cta-banner h3 {
     font-size: 1.2rem;
+  }
+
+  .cta-banner-buttons {
+    flex-direction: column;
+    width: 100%;
   }
 
   .cta-box-inline {
