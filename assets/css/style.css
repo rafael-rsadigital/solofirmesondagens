@@ -1,381 +1,151 @@
-/* Importação da Fonte Executiva 'Inter' */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-:root {
-  /* Paleta Corporativa Geotécnica */
-  --color-primary: #0f2a4a;       /* Azul Marinho Fechado / Engenharia */
-  --color-primary-hover: #163861;
-  --color-accent: #c96010;        /* Terracota Engenharia / Destaque */
-  --color-accent-hover: #a34b09;
-  --color-text: #111827;          /* Grafite de Alta Leitura */
-  --color-text-muted: #4b5563;
-  --color-bg-light: #f8fafc;      /* Cinza Técnico Soft */
-  --color-white: #ffffff;
-  --color-border: #e2e8f0;
-
-  /* Tipografia Executiva */
-  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  --container-max: 1200px;
-  --radius-sm: 4px;
-  --radius-md: 6px;
-  --transition: all 0.25s ease-in-out;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: var(--font-main);
-  color: var(--color-text);
-  background-color: var(--color-white);
-  line-height: 1.6;
-  font-size: 16px;
-  -webkit-font-smoothing: antialiased;
-}
-
-.container {
-  width: 100%;
-  max-width: var(--container-max);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
-
 /* ==========================================================================
-   HEADER & NAVEGAÇÃO
+   NOVA ESTRUTURA HERO COM IMAGEM REAL
    ========================================================================== */
-header {
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
   align-items: center;
-  padding: 0.85rem 0;
+  text-align: left;
 }
 
-.logo img {
-  display: block;
-  height: auto;
-  max-width: 190px;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1.25rem;
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--color-text);
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-nav a:hover {
-  color: var(--color-accent);
-}
-
-/* ==========================================================================
-   HERO / DOBRA PRINCIPAL
-   ========================================================================== */
-.hero {
-  background: linear-gradient(135deg, var(--color-primary) 0%, #081424 100%);
-  color: var(--color-white);
-  padding: 4.5rem 0;
-  text-align: center;
-}
-
-.hero h1 {
-  font-size: 2.25rem;
-  font-weight: 800;
+.hero-text h1 {
+  font-size: 2.1rem;
   margin-bottom: 1rem;
   line-height: 1.25;
-  letter-spacing: -0.02em;
 }
 
-.hero p {
-  font-size: 1.1rem;
+.hero-text p {
+  margin: 0 0 1.5rem 0;
   color: #cbd5e1;
-  max-width: 760px;
-  margin: 0 auto 2rem auto;
-  font-weight: 400;
 }
 
-.btn-cta {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  padding: 0.8rem 1.75rem;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
+.hero-image img {
+  width: 100%;
+  height: auto;
   border-radius: var(--radius-md);
-  transition: var(--transition);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: block;
 }
 
-.btn-cta:hover {
-  background-color: var(--color-accent-hover);
+.image-caption {
+  display: block;
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 0.4rem;
+  text-align: center;
 }
 
 /* ==========================================================================
-   SEÇÕES E GRIDS
+   SEÇÃO INSTITUCIONAL (SOBRE A SOLOFIRME)
    ========================================================================== */
-.section {
-  padding: 4rem 0;
-}
-
-.section-bg {
-  background-color: var(--color-bg-light);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 2.25rem;
-  letter-spacing: -0.01em;
-}
-
-.grid-3 {
+.about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.card {
+.about-text h2 {
+  font-size: 1.8rem;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.about-text p, .about-tech p {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+
+.about-mission-vision {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.mv-item {
   background-color: var(--color-white);
-  border: 1px solid var(--color-border);
+  padding: 1.25rem;
   border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.mv-item h4 {
+  color: var(--color-primary);
+  margin-bottom: 0.5rem;
+}
+
+.mv-item p {
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+.about-tech {
+  background-color: var(--color-white);
   padding: 1.75rem;
-  transition: var(--transition);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  height: fit-content;
+}
+
+.about-tech h3 {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   BANNERS DE CTA (CONVERSÃO)
+   ========================================================================== */
+.cta-banner {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: 2rem;
+  border-radius: var(--radius-md);
+  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
-.card:hover {
-  border-color: var(--color-primary);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-}
-
-.card h3 {
-  font-size: 1.2rem;
+.cta-banner h3 {
+  font-size: 1.3rem;
   font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.6rem;
 }
 
-.card p {
-  color: var(--color-text-muted);
-  margin-bottom: 1.25rem;
-  font-size: 0.925rem;
-}
-
-.card-link {
-  color: var(--color-accent);
-  font-weight: 600;
-  font-size: 0.9rem;
-  text-decoration: none;
-}
-
-.card-link:hover {
-  text-decoration: underline;
-}
-
-/* ==========================================================================
-   FAQ EXECUTIVO (SANFONA MEI/CORPORATIVA)
-   ========================================================================== */
-.faq-container {
-  max-width: 850px;
-  margin: 0 auto;
-}
-
-details {
-  background-color: var(--color-white);
+.cta-box-inline {
+  margin-top: 2rem;
+  background-color: var(--color-bg-light);
   border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.75rem;
-  padding: 0.9rem 1.15rem;
-  transition: var(--transition);
-}
-
-details[open] {
-  border-color: var(--color-primary);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.02);
-}
-
-summary {
-  font-weight: 600;
-  font-size: 0.975rem;
-  color: var(--color-primary);
-  cursor: pointer;
-  list-style: none;
+  padding: 1.25rem;
+  border-radius: var(--radius-md);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-  content: "+";
-  font-size: 1.25rem;
-  color: var(--color-accent);
-  font-weight: 400;
-}
-
-details[open] summary::after {
-  content: "−";
-}
-
-details p {
-  margin-top: 0.65rem;
-  color: var(--color-text-muted);
-  font-size: 0.9rem;
-  border-top: 1px solid var(--color-border);
-  padding-top: 0.65rem;
-  line-height: 1.55;
-}
-
-/* ==========================================================================
-   RODAPÉ CORPORATIVO
-   ========================================================================== */
-footer {
-  background-color: #081424;
-  color: var(--color-white);
-  padding: 3rem 0 1.25rem 0;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.75rem;
-  margin-bottom: 2rem;
-}
-
-.footer-col h3, .footer-col h4 {
-  color: var(--color-accent);
-  font-size: 1rem;
-  font-weight: 600;
-  margin-bottom: 0.85rem;
-}
-
-.footer-col address, .footer-col p {
-  font-style: normal;
-  color: #94a3b8;
+.btn-sm {
+  padding: 0.5rem 1.25rem;
   font-size: 0.875rem;
-  line-height: 1.7;
 }
 
-.copyright {
-  text-align: center;
-  border-top: 1px solid #1e293b;
-  padding-top: 1.25rem;
-  color: #64748b;
-  font-size: 0.8rem;
-}
-
-/* ==========================================================================
-   AJUSTES MOBILE MINIMALISTA & ENXUTO
-   ========================================================================== */
+/* RESPONSIVO AJUSTADO */
 @media (max-width: 768px) {
-  body {
-    font-size: 14px; /* Fonte base menor e mais elegante no celular */
+  .hero-content, .about-grid, .about-mission-vision {
+    grid-template-columns: 1fr;
+  }
+  
+  .hero-text {
+    text-align: center;
   }
 
-  .container {
-    padding: 0 1rem;
-  }
-
-  .header-wrapper {
+  .cta-box-inline {
     flex-direction: column;
-    gap: 0.6rem;
-    padding: 0.6rem 0;
-  }
-
-  .logo img {
-    max-width: 150px; /* Logo discreta no mobile */
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem 0.85rem;
-  }
-
-  nav a {
-    font-size: 0.8rem;
-  }
-
-  .hero {
-    padding: 2.5rem 0;
-  }
-
-  .hero h1 {
-    font-size: 1.35rem; /* Título compacto */
-    line-height: 1.3;
-  }
-
-  .hero p {
-    font-size: 0.875rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .btn-cta {
-    padding: 0.65rem 1.25rem;
-    font-size: 0.85rem; /* Botão enxuto / compacto */
-  }
-
-  .section {
-    padding: 2.25rem 0;
-  }
-
-  .section-title {
-    font-size: 1.3rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .card {
-    padding: 1.15rem;
-  }
-
-  .card h3 {
-    font-size: 1.05rem;
-  }
-
-  .card p {
-    font-size: 0.85rem;
-    margin-bottom: 0.85rem;
-  }
-
-  details {
-    padding: 0.7rem 0.85rem;
-    margin-bottom: 0.5rem;
-  }
-
-  summary {
-    font-size: 0.875rem;
-  }
-
-  details p {
-    font-size: 0.825rem;
+    gap: 1rem;
+    text-align: center;
   }
 }
