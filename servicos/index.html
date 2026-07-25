@@ -1,1093 +1,352 @@
-/* ==========================================================================
-   SOLOFIRME SONDAGENS E FUNDAÇÕES — CSS GLOBAL COMPLETO (SISTEMA DE DESIGN)
-   ========================================================================== */
-
-/* 1. Importação da Fonte Corporativa */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
-
-/* 2. Variáveis de Design */
-:root {
-  --color-primary: #0f2a4a;        /* Azul Marinho Fechado */
-  --color-primary-dark: #081424;   /* Tom Escuro para Rodapé */
-  --color-accent: #c96010;         /* Terracota / Laranja Engenharia */
-  --color-accent-hover: #a34b09;    /* Hover do Terracota */
-  --color-text-main: #111827;      /* Grafite para leitura */
-  --color-text-muted: #4b5563;     /* Texto secundário */
-  --color-bg-light: #f8fafc;      /* Cinza leve para seções alternadas */
-  --color-white: #ffffff;
-  --color-border: #e2e8f0;         /* Bordas discretas */
-
-  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  
-  --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-
-  --shadow-card: 0 8px 25px rgba(15, 42, 74, 0.06);
-  --shadow-card-hover: 0 12px 30px rgba(15, 42, 74, 0.12);
-  --shadow-btn: 0 8px 20px rgba(0, 0, 0, 0.15);
-
-  --transition-fast: all 0.2s ease;
-}
-
-/* 3. Reset Global & Trava Anti-Rolagem Lateral */
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-}
-
-body {
-  font-family: var(--font-family);
-  color: var(--color-text-main);
-  background-color: var(--color-white);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-h1, h2, h3, h4, h5, h6, p, a, span {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-}
-
-/* 4. Layout Base & Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;
-}
-
-/* 5. Header Dinâmico & Sticky */
-header {
-  background-color: var(--color-white);
-  border-bottom: 1px solid var(--color-border);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  transition: var(--transition-fast);
-  width: 100%;
-}
-
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.85rem 0;
-  transition: var(--transition-fast);
-}
-
-.logo img {
-  max-width: 180px;
-  height: auto;
-  transition: var(--transition-fast);
-}
-
-header.scrolled .header-wrapper {
-  padding: 0.4rem 0;
-}
-
-header.scrolled .logo img {
-  max-width: 130px;
-}
-
-/* 6. Navegação Principal Centralizada */
-.nav-menu {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-menu ul {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  gap: 2rem;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-}
-
-.nav-menu li {
-  display: inline-flex;
-  align-items: center;
-}
-
-.nav-menu a {
-  text-decoration: none;
-  color: var(--color-text-main);
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: var(--transition-fast);
-}
-
-.nav-menu a:hover {
-  color: var(--color-accent);
-}
-
-/* 7. Hero / Dobra Principal (Home Page com Background) */
-.hero {
-  background-color: var(--color-primary);
-  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--color-white);
-  padding: 5rem 0;
-}
-
-.hero-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.hero-text h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  line-height: 1.25;
-  margin-bottom: 1.25rem;
-  color: var(--color-white);
-  letter-spacing: -0.01em;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: #cbd5e1;
-  margin-bottom: 2rem;
-}
-
-.hero-image img {
-  border-radius: var(--radius-md);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
-  width: 100%;
-}
-
-.image-caption {
-  display: block;
-  font-size: 0.8rem;
-  color: #94a3b8;
-  margin-top: 0.5rem;
-  text-align: center;
-}
-
-/* 8. Cabeçalho das Páginas Internas (Subpáginas com Background) */
-.page-hero {
-  background-color: var(--color-primary);
-  background-image: linear-gradient(rgba(15, 42, 74, 0.88), rgba(15, 42, 74, 0.88)), url('/images/backgrounds/hero.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--color-white);
-  padding: 4rem 0 3.5rem 0;
-  text-align: center;
-}
-
-.page-hero-title {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: var(--color-white);
-  margin-bottom: 0.75rem;
-}
-
-.page-hero-subtitle {
-  color: #cbd5e1;
-  font-size: 1.1rem;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* 9. Botões CTA */
-.btn-cta {
-  display: inline-block;
-  background-color: var(--color-accent);
-  color: var(--color-white);
-  font-weight: 600;
-  font-size: 1rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: var(--radius-md);
-  text-decoration: none;
-  box-shadow: var(--shadow-btn);
-  transition: var(--transition-fast);
-  border: none;
-  text-align: center;
-  cursor: pointer;
-}
-
-.btn-cta:hover {
-  background-color: var(--color-accent-hover);
-  transform: translateY(-2px);
-}
-
-.btn-sm {
-  padding: 0.6rem 1.25rem;
-  font-size: 0.875rem;
-}
-
-.btn-full {
-  width: 100%;
-}
-
-/* 10. Seções & Grids Gerais */
-.section {
-  padding: 4.5rem 0;
-}
-
-.section-bg {
-  background-color: var(--color-bg-light);
-}
-
-.section-title {
-  text-align: center;
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 2.5rem;
-}
-
-.section-title-left {
-  text-align: left;
-  font-size: 1.85rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 1.5rem;
-}
-
-.grid-3 {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-}
-
-.grid-2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-.card {
-  background-color: var(--color-white);
-  border: none;
-  border-radius: var(--radius-md);
-  padding: 1.75rem;
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-fast);
-  display: flex;
-  flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-card-hover);
-}
-
-.card h3 {
-  font-size: 1.25rem;
-  color: var(--color-primary);
-  margin-bottom: 0.75rem;
-}
-
-.card p {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  margin-bottom: 1.25rem;
-  flex-grow: 1;
-}
-
-.card-link {
-  color: var(--color-accent);
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-}
-
-.card-link:hover {
-  text-decoration: underline;
-}
-
-/* 11. Estruturas Específicas da Página "Sobre" */
-.about-main-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.about-paragraph {
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  line-height: 1.65;
-}
-
-.about-paragraph:last-child {
-  margin-bottom: 0;
-}
-
-.about-media-box {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.about-media-box img {
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  width: 100%;
-}
-
-.about-sidebar-card {
-  background-color: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-}
-
-.about-sidebar-title {
-  color: var(--color-primary);
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.about-check-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  color: var(--color-text-main);
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-.about-check-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.check-icon {
-  color: var(--color-accent);
-  font-weight: bold;
-}
-
-.directives-grid {
-  max-width: 950px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.directive-card {
-  background-color: var(--color-white);
-  padding: 1.75rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-}
-
-.directive-title {
-  color: var(--color-primary);
-  font-size: 1.25rem;
-  margin-bottom: 0.75rem;
-}
-
-.directive-text {
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-.about-container-narrow {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* 12. Estruturas Específicas da Página "Contato" */
-.contact-main-grid {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.contact-info-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.contact-info-item {
-  background-color: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 1.5rem;
-  box-shadow: var(--shadow-card);
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-}
-
-.contact-info-icon {
-  background-color: rgba(201, 96, 16, 0.1);
-  color: var(--color-accent);
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.contact-info-content h3 {
-  font-size: 1.1rem;
-  color: var(--color-primary);
-  margin-bottom: 0.35rem;
-}
-
-.contact-info-content p, .contact-info-content address {
-  font-style: normal;
-  color: var(--color-text-muted);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: 0;
-}
-
-.contact-info-content a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.contact-info-content a:hover {
-  text-decoration: underline;
-}
-
-.contact-form-card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-md);
-  padding: 2.25rem;
-  box-shadow: var(--shadow-card);
-}
-
-.contact-form-title {
-  font-size: 1.5rem;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.contact-form-subtitle {
-  color: var(--color-text-muted);
-  font-size: 0.925rem;
-  margin-bottom: 1.75rem;
-}
-
-.form-group {
-  margin-bottom: 1.25rem;
-}
-
-.form-group label {
-  display: block;
-  font-weight: 600;
-  font-size: 0.875rem;
-  color: var(--color-text-main);
-  margin-bottom: 0.4rem;
-}
-
-.form-control {
-  width: 100%;
-  padding: 0.75rem 1rem;
-  font-family: var(--font-family);
-  font-size: 0.95rem;
-  color: var(--color-text-main);
-  background-color: var(--color-bg-light);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-sm);
-  transition: var(--transition-fast);
-}
-
-.form-control:focus {
-  outline: none;
-  border-color: var(--color-accent);
-  background-color: var(--color-white);
-  box-shadow: 0 0 0 3px rgba(201, 96, 16, 0.15);
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 120px;
-}
-
-/* 13. Estruturas Específicas do Blog */
-.blog-intro-text {
-  color: var(--color-text-muted);
-  font-size: 1.05rem;
-  line-height: 1.7;
-  max-width: 900px;
-  margin: 0 auto 3rem auto;
-  text-align: center;
-}
-
-.blog-featured-card {
-  background-color: var(--color-white);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-card);
-  overflow: hidden;
-  display: grid;
-  grid-template-columns: 1.1fr 1fr;
-  margin-bottom: 4rem;
-  transition: var(--transition-fast);
-}
-
-.blog-featured-card:hover {
-  box-shadow: var(--shadow-card-hover);
-  transform: translateY(-3px);
-}
-
-.blog-featured-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.blog-featured-content {
-  padding: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.blog-meta-header {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-  margin-bottom: 1rem;
-}
-
-.blog-badge-tag {
-  background-color: rgba(201, 96, 16, 0.12);
-  color: var(--color-accent);
-  font-size: 0.75rem;
-  font-weight: 700;
-  padding: 0.3rem 0.7rem;
-  border-radius: var(--radius-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-.blog-meta-details {
-  font-size: 0.825rem;
-  color: #64748b;
-  font-weight: 500;
-}
-
-.blog-featured-title {
-  font-size: 1.65rem;
-  font-weight: 800;
-  color: var(--color-primary);
-  line-height: 1.3;
-  margin-bottom: 1rem;
-}
-
-.blog-featured-excerpt {
-  color: var(--color-text-muted);
-  font-size: 0.975rem;
-  line-height: 1.65;
-  margin-bottom: 1.5rem;
-}
-
-.blog-layout-grid {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 3rem;
-  align-items: start;
-}
-
-.blog-posts-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.75rem;
-}
-
-.blog-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.blog-sidebar-widget {
-  background-color: var(--color-white);
-  padding: 1.75rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  border: 1px solid var(--color-border);
-}
-
-.blog-sidebar-title {
-  font-size: 1.15rem;
-  color: var(--color-primary);
-  font-weight: 700;
-  margin-bottom: 1.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--color-accent);
-}
-
-.blog-category-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-
-.blog-category-item a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: var(--color-text-main);
-  text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 500;
-  padding: 0.4rem 0;
-  transition: var(--transition-fast);
-}
-
-.blog-category-item a:hover {
-  color: var(--color-accent);
-}
-
-.blog-card-meta {
-  font-size: 0.8rem;
-  color: var(--color-accent);
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.5rem;
-}
-
-.blog-badge-soon {
-  display: inline-block;
-  background-color: var(--color-border);
-  color: var(--color-text-muted);
-  font-size: 0.725rem;
-  font-weight: 600;
-  padding: 0.2rem 0.5rem;
-  border-radius: var(--radius-sm);
-  margin-bottom: 0.75rem;
-  width: fit-content;
-}
-
-.blog-link-disabled {
-  color: #94a3b8;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: not-allowed;
-}
-
-/* ==========================================================================
-   14. ESTRUTURAS DO HUB DE SERVIÇOS (TABELA COMPARATIVA & PROCESSO)
-   ========================================================================== */
-
-/* Tabela Comparativa de Métodos */
-.table-responsive {
-  width: 100%;
-  overflow-x: auto;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  margin-top: 1.5rem;
-  background-color: var(--color-white);
-}
-
-.comparison-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 0.95rem;
-}
-
-.comparison-table th {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  padding: 1.15rem 1.25rem;
-  font-weight: 700;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-.comparison-table td {
-  padding: 1.15rem 1.25rem;
-  border-bottom: 1px solid var(--color-border);
-  color: var(--color-text-muted);
-  line-height: 1.5;
-}
-
-.comparison-table tr:last-child td {
-  border-bottom: none;
-}
-
-.comparison-table tr:nth-child(even) {
-  background-color: var(--color-bg-light);
-}
-
-.comparison-table strong {
-  color: var(--color-primary);
-}
-
-/* Etapas do Processo de Atendimento */
-.process-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.process-step-card {
-  background-color: var(--color-white);
-  padding: 1.75rem 1.25rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  flex-direction: column;
-}
-
-.process-step-number {
-  background-color: rgba(201, 96, 16, 0.12);
-  color: var(--color-accent);
-  font-weight: 800;
-  font-size: 1.1rem;
-  width: 42px;
-  height: 42px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-}
-
-.process-step-card h3 {
-  font-size: 1.1rem;
-  color: var(--color-primary);
-  margin-bottom: 0.5rem;
-}
-
-.process-step-card p {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  line-height: 1.55;
-  margin: 0;
-}
-
-/* Banners e Boxes de CTA com Background de Imagem */
-.cta-banner {
-  background-color: var(--color-primary);
-  background-image: linear-gradient(rgba(15, 42, 74, 0.90), rgba(15, 42, 74, 0.90)), url('/images/backgrounds/hero.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: var(--color-white);
-  padding: 2.5rem 1.5rem;
-  border-radius: var(--radius-md);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.cta-banner h3 {
-  font-size: 1.4rem;
-  font-weight: 700;
-}
-
-.cta-subtext {
-  color: #cbd5e1;
-  font-size: 1rem;
-  max-width: 650px;
-  margin-bottom: 0.5rem;
-}
-
-.cta-banner-buttons {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.cta-box-inline {
-  margin-top: 2.5rem;
-  background-color: var(--color-white);
-  padding: 1.5rem 1.75rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-/* 15. Seção FAQ */
-.faq-container {
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-details {
-  background-color: var(--color-white);
-  padding: 1.15rem 1.25rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-card);
-  transition: var(--transition-fast);
-}
-
-summary {
-  font-weight: 600;
-  color: var(--color-primary);
-  cursor: pointer;
-  list-style: none;
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-summary::-webkit-details-marker {
-  display: none;
-}
-
-summary::after {
-  content: "+";
-  font-size: 1.2rem;
-  color: var(--color-accent);
-  font-weight: 700;
-  margin-left: 0.75rem;
-}
-
-details[open] summary::after {
-  content: "−";
-}
-
-details p {
-  margin-top: 0.85rem;
-  color: var(--color-text-muted);
-  font-size: 0.925rem;
-  border-top: 1px solid var(--color-border);
-  padding-top: 0.75rem;
-}
-
-/* 16. Rodapé Corporativo */
-footer {
-  background-color: var(--color-primary-dark);
-  color: #94a3b8;
-  padding: 3.5rem 0 2rem 0;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr;
-  gap: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
-.footer-col h3, .footer-col h4 {
-  color: var(--color-white);
-  margin-bottom: 0.85rem;
-}
-
-.footer-col p, .footer-col address {
-  font-style: normal;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 1.5rem;
-  text-align: center;
-  font-size: 0.825rem;
-  color: #64748b;
-}
-
-/* 17. Botão Flutuante do WhatsApp */
-.whatsapp-float {
-  position: fixed;
-  width: 56px;
-  height: 56px;
-  bottom: 24px;
-  right: 24px;
-  background-color: #25d366;
-  color: #ffffff;
-  border-radius: 50px;
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45);
-  z-index: 9999;
-  transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
-  text-decoration: none;
-}
-
-.whatsapp-float:hover {
-  background-color: #1da851;
-  transform: scale(1.1);
-  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.65);
-}
-
-/* ==========================================================================
-   18. RESPONSIVIDADE & MOBILE
-   ========================================================================== */
-@media (max-width: 992px) {
-  .grid-3 {
-    grid-template-columns: repeat(2, 1fr);
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Serviços de Sondagem de Solo e Geotecnia | Solofirme</title>
+  <meta name="description" content="Conheça os serviços de investigação geotécnica da Solofirme: Sondagem SPT, Sondagem a Trado e Sondagem Rotativa. Laudos técnicos com ART e ABNT em SP.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.solofirmesondagens.com.br/servicos/">
+
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:site_name" content="Solofirme Sondagens e Fundações">
+  <meta property="og:url" content="https://www.solofirmesondagens.com.br/servicos/">
+  <meta property="og:title" content="Serviços de Sondagem de Solo e Geotecnia | Solofirme">
+  <meta property="og:description" content="Soluções completas em investigação do subsolo: Sondagem a Percussão (SPT), a Trado e Rotativa para obras de todos os portes.">
+  <meta property="og:image" content="https://www.solofirmesondagens.com.br/assets/images/og-solofirme.jpg">
+
+  <meta name="geo.region" content="BR-SP">
+  <meta name="geo.placename" content="Mongaguá">
+  <meta name="geo.position" content="-24.0886;-46.6201">
+  <meta name="ICBM" content="-24.0886, -46.6201">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://www.solofirmesondagens.com.br/servicos/#service",
+        "url": "https://www.solofirmesondagens.com.br/servicos/",
+        "name": "Serviços de Investigação Geotécnica e Sondagem de Solo",
+        "serviceType": "Sondagem Geotécnica e Mecânica dos Solos",
+        "description": "Ensaios de campo para reconhecimento do subsolo, perfil geológico, índice N-SPT, amostragem e medição de lençol freático.",
+        "provider": {
+          "@id": "https://www.solofirmesondagens.com.br/#organization"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Métodos de Sondagem Geotécnica",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sondagem a Percussão (SPT)",
+                "url": "https://www.solofirmesondagens.com.br/servicos/sondagem-spt/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sondagem a Trado",
+                "url": "https://www.solofirmesondagens.com.br/servicos/sondagem-trado/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Sondagem Rotativa",
+                "url": "https://www.solofirmesondagens.com.br/servicos/sondagem-rotativa/"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.solofirmesondagens.com.br/servicos/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Início",
+            "item": "https://www.solofirmesondagens.com.br/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Serviços",
+            "item": "https://www.solofirmesondagens.com.br/servicos/"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.solofirmesondagens.com.br/servicos/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Qual método de sondagem devo contratar para a minha obra?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A Sondagem SPT é o método padrão para a maioria das edificações residenciais, comerciais e industriais. A Sondagem a Trado é recomendada para investigações superficiais preliminares ou amostragem de solo. A Sondagem Rotativa é necessária quando há presença de rochas, matacões ou solos extremamente rijos."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O laudo de sondagem vem acompanhado de ART?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sim. Todos os laudos geotécnicos emitidos pela Solofirme contam com acompanhamento técnico e emissão de Anotação de Responsabilidade Técnica (ART) conforme as diretrizes do CREA-SP."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quanto tempo leva para a execução da sondagem no terreno?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "O tempo de campo depende da metragem perfurada e da quantidade de furos. Em média, furos de sondagem SPT residenciais são concluídos em 1 a 2 dias de operação de campo."
+            }
+          }
+        ]
+      }
+    ]
   }
-  .process-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .about-main-grid, .contact-main-grid, .blog-layout-grid, .blog-featured-card {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .blog-posts-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  </script>
+</head>
+<body>
 
-@media (max-width: 768px) {
-  .header-wrapper {
-    flex-direction: column;
-    gap: 0.75rem;
-    padding: 0.65rem 0;
-  }
+  <header id="main-header">
+    <div class="container header-wrapper">
+      <a href="/" class="logo">
+        <img src="/images/logo/logo.png" alt="Solofirme Sondagens e Fundações" width="180" height="52" loading="eager">
+      </a>
+      
+      <nav aria-label="Navegação Principal" class="nav-menu">
+        <ul>
+          <li><a href="/">Início</a></li>
+          <li><a href="/sobre/">Sobre</a></li>
+          <li><a href="/servicos/">Serviços</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contato/">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-  .logo img {
-    max-width: 135px;
-  }
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <h1 class="page-hero-title">Serviços de Investigação Geotécnica e Perfuração</h1>
+        <p class="page-hero-subtitle">
+          Soluções completas para reconhecimento do subsolo, determinação de capacidade de carga e orientação técnica para projetos de fundação.
+        </p>
+      </div>
+    </section>
 
-  header.scrolled .logo img {
-    max-width: 110px;
-  }
+    <section class="section">
+      <div class="container">
+        <div class="about-container-narrow">
+          <h2 class="section-title">Por que a Investigação Geotécnica é Indispensável?</h2>
+          <p class="about-paragraph">
+            Construir sem o conhecimento prévio do solo é assumir riscos financeiros e estruturais desnecessários. O estudo do subsolo fornece os parâmetros mecânicos exatos que o projetista necessita para definir a tipologia e a profundidade ideal da fundação.
+          </p>
+          <p class="about-paragraph">
+            Com laudos precisos, evita-se tanto o superdimensionamento (gasto excessivo com concreto, estacas e escavações) quanto o subdimensionamento, que pode acarretar trincas, fissuras e recalques na edificação ao longo do tempo.
+          </p>
+        </div>
+      </div>
+    </section>
 
-  .nav-menu {
-    width: 100%;
-  }
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Nossos Métodos de Investigação do Solo</h2>
+        
+        <div class="grid-3">
+          <article class="card">
+            <h3>Sondagem a Percussão (SPT)</h3>
+            <p>
+              O ensaio geotécnico mais utilizado na engenharia civil. Mede a resistência do solo (índice N-SPT) a cada metro, identifica a estratigrafia das camadas e mapeia o nível do lençol freático conforme a NBR 6484.
+            </p>
+            <a href="/servicos/sondagem-spt/" class="card-link">Ver detalhes do ensaio SPT &rarr;</a>
+          </article>
 
-  .nav-menu ul {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.5rem 1rem;
-  }
+          <article class="card">
+            <h3>Sondagem a Trado</h3>
+            <p>
+              Método manual ou mecanizado indicado para investigações preliminares de camadas superficiais, coleta de amostras deformadas e verificação rápida da profundidade do nível d'água no terreno.
+            </p>
+            <a href="/servicos/sondagem-trado/" class="card-link">Ver detalhes do ensaio a Trado &rarr;</a>
+          </article>
 
-  .nav-menu a {
-    font-size: 0.85rem;
-  }
+          <article class="card">
+            <h3>Sondagem Rotativa</h3>
+            <p>
+              Perfuração técnica desenvolvida para transpassar rochas, matacões e solos de altíssima dureza, permitindo a extração de testemunhos contínuos para análise mineralógica e de fraturamento.
+            </p>
+            <a href="/servicos/sondagem-rotativa/" class="card-link">Ver detalhes da Sondagem Rotativa &rarr;</a>
+          </article>
+        </div>
+      </div>
+    </section>
 
-  .whatsapp-float {
-    width: 48px;
-    height: 48px;
-    bottom: 16px;
-    right: 16px;
-  }
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Comparativo Técnico: Quando Utilizar Cada Método?</h2>
+        <p class="about-paragraph" style="text-align: center; max-width: 800px; margin: 0 auto 2rem auto;">
+          A escolha do método depende das características do terreno, do porte da edificação e das exigências do projeto estrutural.
+        </p>
 
-  .whatsapp-float svg {
-    width: 24px;
-    height: 24px;
-  }
+        <div class="table-responsive">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Método de Ensaio</th>
+                <th>Principal Indicação</th>
+                <th>Profundidade Típica</th>
+                <th>Amostragem Obtida</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Sondagem SPT</strong></td>
+                <td>Casas, prédios, galpões, muros e obras urbanas em geral</td>
+                <td>Até a camada de impenetrável ao SPT</td>
+                <td>Amostras representativas a cada 1 metro + índice N-SPT</td>
+              </tr>
+              <tr>
+                <td><strong>Sondagem a Trado</strong></td>
+                <td>Reconhecimento superficial e nível d'água preliminar</td>
+                <td>2 a 6 metros (acima do lençol freático)</td>
+                <td>Amostras deformadas para ensaios laboratoriais simples</td>
+              </tr>
+              <tr>
+                <td><strong>Sondagem Rotativa</strong></td>
+                <td>Terrenos rochosos, matacões, encostas e obras pesadas</td>
+                <td>Avanço contínuo em rocha rígida</td>
+                <td>Testemunhos cilíndricos contínuos de rocha</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
 
-  .hero, .page-hero {
-    padding: 2.5rem 0;
-  }
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Como Funciona o Atendimento da Solofirme</h2>
+        
+        <div class="process-grid">
+          <div class="process-step-card">
+            <div class="process-step-number">1</div>
+            <h3>Análise do Projeto</h3>
+            <p>Avaliamos a planta de situação do terreno e as especificações da obra para sugerir a malha e quantidade ideal de furos.</p>
+          </div>
 
-  .page-hero-title {
-    font-size: 1.6rem;
-  }
+          <div class="process-step-card">
+            <div class="process-step-number">2</div>
+            <h3>Mobilização e Campo</h3>
+            <p>Deslocamos a equipe técnica e os equipamentos para o local da obra com pontualidade e rigor de segurança.</p>
+          </div>
 
-  .page-hero-subtitle {
-    font-size: 0.95rem;
-  }
+          <div class="process-step-card">
+            <div class="process-step-number">3</div>
+            <h3>Perfuração e Ensaios</h3>
+            <p>Executamos a perfuração, contagem de golpes, coleta de amostras e monitoramento do lençol freático em campo.</p>
+          </div>
 
-  .hero-content, .grid-3, .footer-grid, .directives-grid, .process-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
+          <div class="process-step-card">
+            <div class="process-step-number">4</div>
+            <h3>Emissão do Laudo e ART</h3>
+            <p>Entregamos o perfil geológico-geotécnico completo acompanhado de ART para apresentação aos calculistas e prefeituras.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  .hero-text {
-    text-align: center;
-  }
+    <section class="section">
+      <div class="container">
+        <div class="about-container-narrow" style="text-align: center;">
+          <h2 class="section-title">Atendimento Regional Logístico</h2>
+          <p class="about-paragraph">
+            Com sede operacional estruturada em Mongaguá (SP), a Solofirme atende com rapidez e eficiência logística toda a <strong>Baixada Santista</strong>, o <strong>Litoral Norte de São Paulo</strong> e os municípios do <strong>Vale do Paraíba</strong>.
+          </p>
+          <a href="/atendimento/" class="card-link" style="font-size: 1rem; margin-top: 0.5rem; display: inline-block;">Conhecer detalhes de atendimento por região &rarr;</a>
+        </div>
+      </div>
+    </section>
 
-  .hero-text h1 {
-    font-size: 1.5rem;
-    line-height: 1.3;
-  }
+    <section class="section section-bg">
+      <div class="container">
+        <h2 class="section-title">Perguntas Frequentes sobre Nossos Serviços</h2>
+        <div class="faq-container">
+          <details>
+            <summary>Qual método de sondagem devo contratar para a minha obra?</summary>
+            <p>A Sondagem SPT é o método padrão para a maioria das edificações residenciais, comerciais e industriais. A Sondagem a Trado é recomendada para investigações superficiais preliminares ou amostragem de solo. A Sondagem Rotativa é necessária quando há presença de rochas, matacões ou solos extremamente rijos.</p>
+          </details>
+          <details>
+            <summary>O laudo de sondagem vem acompanhado de ART?</summary>
+            <p>Sim. Todos os laudos geotécnicos emitidos pela Solofirme contam com acompanhamento técnico e emissão de Anotação de Responsabilidade Técnica (ART) conforme as diretrizes do CREA-SP.</p>
+          </details>
+          <details>
+            <summary>Quanto tempo leva para a execução da sondagem no terreno?</summary>
+            <p>O tempo de campo depende da metragem perfurada e da quantidade de furos. Em média, furos de sondagem SPT residenciais são concluídos em 1 a 2 dias de operação de campo.</p>
+          </details>
+        </div>
 
-  .section {
-    padding: 2.75rem 0;
-  }
+        <div class="cta-banner" style="margin-top: 3rem;">
+          <h3>Precisa de um orçamento para a sondagem do seu terreno?</h3>
+          <p class="cta-subtext">
+            Envie as informações do seu terreno ou projeto para receber uma proposta técnica detalhada da nossa equipe.
+          </p>
+          <div class="cta-banner-buttons">
+            <a href="https://wa.me/5513988111316" target="_blank" rel="noopener" class="btn-cta">Solicitar Orçamento no WhatsApp</a>
+            <a href="/contato/" class="btn-cta btn-sm">Enviar Mensagem pelo Site</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
-  .section-title, .section-title-left {
-    font-size: 1.35rem;
-    margin-bottom: 1.25rem;
-  }
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-col">
+        <h3>Solofirme Sondagens</h3>
+        <p>Engenharia geotécnica e investigação de solos com precisão e segurança para a construção civil.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Sede Operacional</h4>
+        <address>
+          R. Octávio Alves Rodrigues, 05<br>
+          Balneario Verde Mar, Mongaguá - SP<br>
+          CEP 11730-000
+        </address>
+      </div>
+      <div class="footer-col">
+        <h4>Contato Direto</h4>
+        <p>WhatsApp: (13) 98811-1316<br>
+        E-mail: solofirmesondagens@gmail.com</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Solofirme Sondagens e Fundações. Todos os direitos reservados.</p>
+    </div>
+  </footer>
 
-  .card, .contact-form-card, .blog-featured-content {
-    padding: 1.25rem;
-  }
+  <a href="https://wa.me/5513988111316" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Atendimento via WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="28" height="28" fill="#ffffff">
+      <path d="M380.9 97.1C339 45.1 279.9 16 216 16 96.8 16 0 112.8 0 232c0 42.5 11 83.3 31.8 119.3L0 496l148.2-31.5C182.8 481 218.8 496 256 496c119.2 0 216-96.8 216-216 0-59.9-29.1-119-71.1-160.9zM256 456c-32.9 0-65.1-8.9-93.3-25.7l-6.7-4-88 18.7 23.4-85.8-4.4-7C69.3 322.9 56 278.2 56 232 56 121.7 145.7 32 256 32c53.5 0 103.8 20.8 141.6 58.6C435.4 128.4 456 178.7 456 232c0 110.3-89.7 200-200 200zm115.2-152c-6.3-3.2-37.5-18.5-43.3-20.6-5.8-2.1-10-3.2-14.2 3.2-4.2 6.3-16.4 20.6-20.1 24.8-3.7 4.2-7.4 4.7-13.7 1.6-6.3-3.2-26.6-9.8-50.7-31.3-18.8-16.8-31.5-37.5-35.2-43.8-3.7-6.3-.4-9.7 2.8-12.8 2.8-2.8 6.3-7.4 9.5-11.1 3.2-3.7 4.2-6.3 6.3-10.5 2.1-4.2 1.1-7.9-.5-11.1-1.6-3.2-14.2-34.3-19.5-47-5.2-12.3-10.5-10.6-14.2-10.8-3.7-.2-7.9-.2-12.1-.2-4.2 0-11.1 1.6-16.9 7.9-5.8 6.3-22.1 21.6-22.1 52.7s22.6 61.2 25.8 65.4c3.2 4.2 44.5 68 107.8 95.3 15.1 6.5 26.9 10.4 36.1 13.3 15.2 4.8 29 4.1 40 2.5 12.3-1.8 37.5-15.3 42.8-30.1 5.3-14.8 5.3-27.5 3.7-30.1-1.6-2.6-5.8-4.2-12.1-7.4z"/>
+    </svg>
+  </a>
 
-  .blog-featured-title {
-    font-size: 1.3rem;
-  }
-
-  .cta-banner {
-    padding: 1.75rem 1rem;
-  }
-
-  .cta-banner h3 {
-    font-size: 1.2rem;
-  }
-
-  .cta-banner-buttons {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .cta-box-inline {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    padding: 1.15rem 1rem;
-  }
-
-  .btn-cta {
-    width: 100%;
-    font-size: 0.9rem;
-    padding: 0.75rem 1rem;
-  }
-}
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
