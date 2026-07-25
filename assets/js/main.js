@@ -12,16 +12,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Comportamento do Dropdown no Toque (Mobile)
+  // 2. Controle do Dropdown de Serviços no Celular / Clique
   const dropdownToggle = document.querySelector(".dropdown-toggle");
   const dropdownParent = document.querySelector(".dropdown");
 
   if (dropdownToggle && dropdownParent) {
     dropdownToggle.addEventListener("click", (e) => {
-      // Em telas menores, alterna a visibilidade do submenu no toque
-      if (window.innerWidth <= 768) {
-        e.preventDefault();
-        dropdownParent.classList.toggle("open");
+      e.preventDefault();
+      dropdownParent.classList.toggle("open");
+    });
+
+    // Fecha o menu se o usuário clicar fora dele
+    document.addEventListener("click", (e) => {
+      if (!dropdownParent.contains(e.target)) {
+        dropdownParent.classList.remove("open");
       }
     });
   }
