@@ -326,6 +326,16 @@ header.scrolled .logo img {
   text-decoration: underline;
 }
 
+.text-link {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
 /* 11. Estruturas Específicas da Página "Sobre" */
 .about-main-grid {
   display: grid;
@@ -711,8 +721,43 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   14. ESTRUTURAS DO HUB DE SERVIÇOS (TABELA COMPARATIVA & PROCESSO)
+   14. ESTRUTURAS DO HUB DE SERVIÇOS (TABELA COMPARATIVA, PROCESSO & CLIENTES)
    ========================================================================== */
+
+/* Prova Social / Perfil de Clientes Atendidos */
+.client-types-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.client-type-item {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 0.75rem;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: var(--transition-fast);
+}
+
+.client-type-item:hover {
+  border-color: var(--color-accent);
+  transform: translateY(-3px);
+}
+
+.client-type-icon {
+  font-size: 1.5rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.client-type-item h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-primary);
+}
 
 /* Tabela Comparativa de Métodos */
 .table-responsive {
@@ -728,21 +773,22 @@ textarea.form-control {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
-  font-size: 0.95rem;
+  font-size: 0.925rem;
+  min-width: 750px;
 }
 
 .comparison-table th {
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: 1.15rem 1.25rem;
+  padding: 1.15rem 1rem;
   font-weight: 700;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
 
 .comparison-table td {
-  padding: 1.15rem 1.25rem;
+  padding: 1.15rem 1rem;
   border-bottom: 1px solid var(--color-border);
   color: var(--color-text-muted);
   line-height: 1.5;
@@ -760,17 +806,17 @@ textarea.form-control {
   color: var(--color-primary);
 }
 
-/* Etapas do Processo de Atendimento */
-.process-grid {
+/* Etapas do Processo de Atendimento em 5 Passos */
+.process-grid-5 {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.25rem;
   margin-top: 1.5rem;
 }
 
 .process-step-card {
   background-color: var(--color-white);
-  padding: 1.75rem 1.25rem;
+  padding: 1.5rem 1.15rem;
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
   display: flex;
@@ -782,8 +828,8 @@ textarea.form-control {
   color: var(--color-accent);
   font-weight: 800;
   font-size: 1.1rem;
-  width: 42px;
-  height: 42px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -792,15 +838,15 @@ textarea.form-control {
 }
 
 .process-step-card h3 {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--color-primary);
   margin-bottom: 0.5rem;
 }
 
 .process-step-card p {
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
-  line-height: 1.55;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -969,8 +1015,11 @@ footer {
   .grid-3 {
     grid-template-columns: repeat(2, 1fr);
   }
-  .process-grid {
+  .process-grid-5 {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .client-types-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
   .about-main-grid, .contact-main-grid, .blog-layout-grid, .blog-featured-card {
     grid-template-columns: 1fr;
@@ -1034,9 +1083,13 @@ footer {
     font-size: 0.95rem;
   }
 
-  .hero-content, .grid-3, .footer-grid, .directives-grid, .process-grid {
+  .hero-content, .grid-3, .footer-grid, .directives-grid, .process-grid-5 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
+  }
+
+  .client-types-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-text {
